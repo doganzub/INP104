@@ -43,7 +43,7 @@
 - `week-05-multiple-linear-regression/05-multiple-linear-regression.ipynb` → Hafta 5: `heart.data.csv` ile coklu dogrusal regresyon (bisiklet+sigara→kalp hastaligi)
 
 ### Kok dizindeki dosyalar:
-- `3s_task_k_means.ipynb` → K-Means task notebooku (3S_k_means.ipynb ile ayni icerik)
+- `3s_task_k_means.ipynb` → K-Means gorev notebooku (bosluklu/TODO formatinda, ogrenci tamamlar; `mall_customers.csv` kullanir)
 
 ---
 
@@ -65,7 +65,10 @@
 
 ### `data/auto_mpg_extended.csv` → Hafta 2 (genisletilmis)
 - **Satir:** 2000, **Sutun:** 9 (boslukla ayrilmis, header yok)
-- **Olusan:** `data/auto-mpg_extended.ipynb` ile uretilmis sentetik veri
+- **Olusan:** `data/auto-mpg_extended.ipynb` ile uretilmis sentetik veri (np.random.seed(42))
+- **Sutunlar:** `mpg`, `cylinders`, `displacement`, `horsepower`, `weight`, `acceleration`, `model_year`, `origin`, `car_name`
+- **Onemli:** horsepower sutununda ~%5 `?` var (sentetik), orijinal auto-mpg.data ile ayni on isleme adimlari uygulanabilir
+- **Kullanan notebooklar:** `docs/2S_task_veri_hazirlama.ipynb` (ek calisma verisi)
 
 ### `data/mall_customers.csv` → Hafta 3
 - **Satir:** 200, **Sutun:** 5
@@ -79,7 +82,8 @@
 - **Sutunlar:** `YearsExperience`, `Salary`
 - **Kullanim:** Basit dogrusal regresyon (deneyim → maas)
 - **Turkcelestirme:** `YearsExperience→deneyim`, `Salary→maas`
-- **Sonuc:** R²=0.95, maas = 24190 + 9662 * deneyim
+- **Sonuc:** R²=0.957, maas = 25792.20 + 9449.96 * deneyim, Pearson r=0.978
+- **Kullanan notebooklar:** `docs/4_basit_dogReg_deneyim_maas.ipynb`, `docs/4S_task_basit_dogReg_deneyim_maas.ipynb`
 
 ### `data/income.data.csv` → Hafta 4
 - **Satir:** 500, **Sutun:** 3 (index + 2 ozellik)
@@ -100,7 +104,11 @@
 ### `data/day.csv` → Hafta 5
 - **Satir:** 731, **Sutun:** 16
 - **Sutunlar:** `instant`, `dteday`, `season`, `yr`, `mnth`, `holiday`, `weekday`, `workingday`, `weathersit`, `temp`, `atemp`, `hum`, `windspeed`, `casual`, `registered`, `cnt`
-- **Kullanim:** Coklu dogrusal regresyon (bisiklet paylasim verisi, hava durumu etkileri)
+- **Kullanim:** Coklu dogrusal regresyon (sicaklik+nem → bisiklet kiralama sayisi)
+- **Turkcelestirme:** `temp→havaSicakligi`, `hum→nemOrani`, `cnt→kiralamaSayisi`
+- **Sonuc:** R²=0.436, kiralamaSayisi = 2716.457 + 6857.488*havaSicakligi - 2604.412*nemOrani
+- **Kaynak:** UCI Bike Sharing Dataset (Fanaee-T & Gama, 2013)
+- **Kullanan notebooklar:** `docs/5_coklu_dogReg_day.ipynb`, `docs/5S_task_coklu_dogReg_day.ipynb`
 
 ### `data/hcvdat0.csv` → Ek veri
 - **Satir:** 616, **Sutun:** 14
@@ -176,7 +184,8 @@ INP214/
 ├── requirements.txt                   # Python bagimliliklari
 ├── task_README.md                     # Task notebook hazirlama kilavuzu
 ├── cleanup_icons.sh                   # Icon/.DS_Store temizleme scripti
-├── 3s_task_k_means.ipynb              # K-Means task notebooku (kokten)
+├── clean_notebooks.py                 # Notebook temizleme scripti
+├── 3s_task_k_means.ipynb              # K-Means gorev notebooku (bosluklu, mall_customers.csv)
 ├── data/                              # Tum veri setleri
 │   ├── insurance.csv                  # Hafta 1 - Sigorta verisi
 │   ├── auto-mpg.data                  # Hafta 2 - Otomobil yakit verisi
@@ -254,11 +263,14 @@ jupyter notebook
 | Iliskisi | Hafta 4 ders notebook → `4_basit_dogReg_gelir_mutluluk.ipynb` | `04-simple-linear-regression.ipynb` (ayni icerik) |
 
 **Onemli:** `week-XX-*/` klasorlerindeki notebooklar, `docs/` klasorundeki ders notebooklarinin "temiz" kopyalaridir. Icerik olarak eslesirler:
-- `week-01` ↔ `docs/1_veri_gorsellestirme.ipynb`
-- `week-02` ↔ `docs/2_veri_hazirlama.ipynb`
-- `week-03` ↔ `docs/3_k_means.ipynb`
-- `week-04` ↔ `docs/4_basit_dogReg_gelir_mutluluk.ipynb` (income→happiness)
-- `week-05` ↔ `docs/5_coklu_dogReg.ipynb` (heart.data)
+- `week-01` ↔ `docs/1_veri_gorsellestirme.ipynb` → `insurance.csv`
+- `week-02` ↔ `docs/2_veri_hazirlama.ipynb` → `auto-mpg.data`
+- `week-03` ↔ `docs/3_k_means.ipynb` → `mall_customers.csv`
+- `week-04` ↔ `docs/4_basit_dogReg_gelir_mutluluk.ipynb` → `income.data.csv` (gelir→mutluluk, R²=0.749)
+- `week-05` ↔ `docs/5_coklu_dogReg.ipynb` → `heart.data.csv` (bisiklet+sigara→kalp, R²=0.978)
+
+> **Not:** Hafta 4'te iki veri seti kullanilir: `Salary_dataset.csv` (deneyim→maas) ve `income.data.csv` (gelir→mutluluk). Week-04 klasoru `income.data.csv` versiyonunu icerir.
+> **Not:** Hafta 5'te iki veri seti kullanilir: `heart.data.csv` (kalp hastaligi) ve `day.csv` (bisiklet kiralama). Week-05 klasoru `heart.data.csv` versiyonunu icerir.
 
 ---
 
