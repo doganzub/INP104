@@ -1,13 +1,55 @@
-# INP214 - Uygulamalı Makine Öğrenmesi
-# Python 3.13.4 & Google Colab uyumlu
-# pip install -r requirements.txt
+# INP104 - Python Programlamaya Giriş & Uygulamalı Makine Öğrenmesi
+# Python 3.13.4 uyumlu
+# Kurulum: pip install -r requirements.txt
+#
+# ============================================================
+# TEMEL PYTHON GELİŞTİRME ORTAMI
+# ============================================================
+# Jupyter Notebook ortamı (dersleri çalıştırmak için gerekli)
+jupyter>=1.0.0
+notebook>=7.0.0
+ipykernel>=6.29.0
 
+# ============================================================
+# VERİ BİLİMİ & MAKİNE ÖĞRENMESİ KÜTÜPHANELERİ
+# ============================================================
+# Sayısal hesaplama
 numpy>=1.26.0,<2.0
+
+# Veri analizi ve işleme
 pandas>=2.2.0
+
+# Veri görselleştirme
 matplotlib>=3.8.0
 seaborn>=0.13.0
+
+# Makine öğrenmesi
 scikit-learn>=1.4.0
+
+# İstatistik ve bilimsel hesaplama
 scipy>=1.12.0
 statsmodels>=0.14.0
+
+# Makine öğrenmesi görselleştirme
 yellowbrick>=1.5
+
+# Jupyter widget desteği
 ipywidgets>=8.1.0
+
+# ============================================================
+# NOT: Aşağıdaki modüller Python 3.13.4 ile birlikte gelir,
+# ayrıca kurulum GEREKMEZ (Standart Kütüphane):
+# ============================================================
+# os          - İşletim sistemi işlemleri (klasör oluşturma vb.)
+# sys         - Python yorumlayıcı ayarları ve yol yönetimi
+# sqlite3     - Veritabanı işlemleri (SQLite)
+# subprocess  - Harici program çalıştırma
+# webbrowser  - Web tarayıcı açma
+# locale      - Yerelleştirme (Türkçe karakter sıralama vb.)
+# pprint      - Güzel biçimlendirilmiş çıktı
+# time        - Zaman işlemleri
+# datetime    - Tarih ve saat işlemleri
+# math        - Matematiksel işlemler
+# random      - Rastgele sayı üretimi
+# json        - JSON veri işleme
+# re          - Düzenli ifadeler (Regular Expressions)
