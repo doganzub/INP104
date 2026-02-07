@@ -1,0 +1,2850 @@
+
+#programlama dilinin bütün felsefesi, ‘bir kez yazılan kodların en verimli şekilde tekrar tekrar kullanılabilmesi,’ fikrine dayanıyor.
+
+----------------------------------------------------------------------------
+tırnaklar
+-----------------------------------------------------------------------------
+print ("yeni başlangıçlar'güzeldir'")
+print("İstanbul'un 5 günlük hava durumu tahmini")
+print("""Python programlama dilinin adı "piton" yılanından gelmez""")
+----------------------------------------------------------------------------
+veri tipleri
+-----------------------------------------------------------------------------
+string : "Züber Doğan"
+integer : 1978
+Float :73.3
+karakter dizisi: "a"
+
+----------------------------------------------------------------------------
+Gömülü Fonksiyonlar
+-----------------------------------------------------------------------------
+type(73.4) #karakter tiplerini göster#
+
+len("firat_ozgul_1980") #karakter dizisindeki karakter sayısı verir. sayılarda kullanılamaz.
+str ile sayılar karakter dizilerine çevrilir len(str(12343423432))
+
+
+Print özel paremetreleri
+       sep="" adana ve mersin "-" ile birleştir. print("Adana", "Mersin", sep="-")
+              "\n" alt satıra kaydırma.   print ("adana", "mersin", sep="\n")
+       end="" karakter dizisinin sonuna "." ekle.  print("Bugün günlerden Salı", end=".")
+       file= dosya ekrana değil seçilen dosyaya yazdırma
+              dosya = open("deneme.txt", "w")
+              print("züber doğan", file=dosya)
+              print("uygar doğan", file=dosya)
+              print("idil doğan", file=dosya)
+              dosya.close()
+
+       isim    = "züber"
+       soyisim = "doğan"
+       şehir   = "İstanbul"
+print( "isim           : ", isim, "\n"
+       "soyisim        : ", soyisim, "\n"
+       "şehir          : ", şehir, "\n")
+
+
+int("23") karakter dizilerini veya noktalı sayıyıyı tam sayıya çevirme fonksiyonu
+float("23") karakter dizilerini veya tam sayıyı noktalı sayıya çevirme fonksiyonu
+str("23") Bir tamsayı veya kayan noktalı sayıyı karakter dizisine çevirme fonksiyonu
+
+
+input() fonksiyonunun kullanıcıdan aldığı şey bir karakter dizisidir. aritmetik işlem için sayıya int çevirmek gerekir.
+       gun = input("kaç gün çalışıyorsun? ")
+       gidis = input("kaça geliyorsun ")
+       gelis = input("kaça gidiyorsun ")
+       maliyet = int(gun) * (int(gidis) + int(gelis))
+       print(maliyet, "ooooo böyle iş olmaz",end="!\n" )
+
+
+eval() karakter dizilerini değerlendirmeye tabi tutma yada işleme. güvenlik açığı oluşrurur. kullanıcı ör:open("deneme.txt", "w" girerse  bilgisayada deneme.txt dosyası oluşur.
+exec ("a = 45") eval gibi çalışan ve içerisine değişken tanımlamaya yarayan fonksiyon
+       veri= input("işlem yap: ")
+       işlem= eval(veri)
+       print(işlem)
+
+format() karakter dizilerini birleştirme fonksiyonu
+       print("{} ve {} beşiktaşladır".format("Uygar", "Züber"))
+
+
+round() yuvarlama fonksiyonu
+       a=22/7
+       print(round(a,3))#virgülden sonra 3 hane
+
+bool() değeri true mu false mu
+        a=0
+        print(bool(a) #0 bool değeri false
+        b=1
+        print(bool(b)) #1 bool değeri true
+
+all () öğlerin tümü bool değeri true mu false mu
+        a=(0,1,2,3)
+        print(all(a))#Listede 0 olduğu için false döndürür
+        b=(1,2,3)
+        print(all(b))#listede 0 olmadığı için true döndürür
+
+list() listeye dönüştürme
+        a=(0,1,2,3)
+        print(list(a)) #[0, 1, 2, 3]
+        s ={'Züber':43,'Uygar':7,'İdil':39}
+        print(list(s))#sözlük listeye dönüştü['Züber', 'Uygar', 'İdil']
+
+set() kümeye dönüştürme
+        s =['Züber','Uygar','İdil']
+        print(set(s)) #listeyi kümeye dönüştürdü {'Uygar', 'İdil', 'Züber'}
+
+tuple() demete dönüştürme
+        s =['Züber','Uygar','İdil']
+        print(tuple(s))#listeyi demete dönüştürdü ('Züber', 'Uygar', 'İdil')
+
+
+----------------------------------------------------------------------------
+değişkenler
+-----------------------------------------------------------------------------
+değişken olarak kullanmaz
+['False', 'None', 'True', '__peg_parser__', 'and', 'as', 'assert', 'async', 'await', 'break', 'class',
+'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if',
+'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+
+kullanıcı adı = "züber" #boşluk olmamalı#
+kullanıcı_adı="züber
+------------------------------------------
+#değişkenlere çoklu değer atama#
+ocak = mart = mayıs = temmuz = ağustos = ekim = aralık = 31
+nisan = haziran = eylül = kasım = 30
+şubat = 28
+
+------------------------------------------
+gun = 30
+gidis = 5
+gelis = 4
+maliyet = gun * (gidis + gelis)
+print(maliyet)
+------------------------------------------
+
+Mart ayı doğalgaz faturasına göre sayaçtan ölçülen hacim 346 m3. Demek ki bir ayda toplam 346 m3 doğalgaz harcamışız.
+Fatura tutarı 273.87 TL imiş. Yani 346 m3 doğalgaz tüketmenin bedeli 273.87 TL. Buna göre değişkenlerimizi tanımlayalım
+
+nisan_gun=30
+mart_gun=31
+
+mart_fat_tl = 273.87
+mart_fat_m3 = 346
+br_m3 =  mart_fat_tl/mart_fat_m3
+
+print(br_m3)
+
+mart_gun_m3= mart_fat_m3 /mart_gun
+print(mart_gun_m3)
+
+Nisan ünde 11 m3 tüketim yapılmışsa nisan faturası?
+
+nisan_gun_m3=11
+nisan_fat_tl=nisan_gun*nisan_gun_m3*br_m3
+print(nisan_fat_tl)
+
+-----------------------------------------------------------------
+Değişken değerlerini birbirine verme (geçici değişken tanımlamadan)
+-----------------------------------------------------------------
+
+osman = "Araştırma Geliştirme Müdürü"
+mehmet = "Proje Sorumlusu"
+
+osman, mehmet= mehmet, osman
+print(osman)
+
+-----------------------------------------------------------------
+if-elif-else
+-----------------------------------------------------------------
+if bize olası bütün sonuçları listeler, elif ise sadece doğru olan ilk sonucu verir.
+
+a = int(input("sınav puanınızı girin ?\n"))
+if a >= 0 and a <= 49:
+       print("kötü")
+elif a >= 50 and a <= 79:
+       print("iyi")
+elif a >= 80 and a <= 100:
+       print("çokiyi")
+else:
+       print("lütfen 0 ile 100 arasında puan giriniz")
+
+
+--------------------------------------
+
+ciro = int(input("ciro girin ?\n"))
+prim_1 = int(ciro) * 0.1
+prim_2 = int(ciro) * 0.2
+prim_3 = int(ciro) * 0.3
+
+if ciro <99 or ciro >2000:
+    print("ciro değerini 100 ile 2000 arasında girin")
+
+elif ciro >= 100 and ciro <=499:
+    print ("prim :", prim_1)
+
+elif ciro >= 500 and ciro <=999:
+    print ("prim :", prim_2)
+
+elif ciro >= 1000 and ciro <=2000:
+    print ("prim :", prim_3)
+
+
+--------------------------------------------------
+
+a = int(input("a sayısını girin ?\n"))
+b = int(input("b sayısını girin ?\n"))
+c = int(input("c sayısını girin ?\n"))
+if a > b and a > c:
+    print("en büyük sayı a dır")
+elif b > a and b > c:
+    print("en büyük sayı b dır")
+else:
+    print("en büyük sayı c dır")
+---------------------------------------------------
+
+isgunu = (input("bugün iş günü mü ?\n"))
+if isgunu == "evet":
+    print("işe gitmek için hazırlan")
+trafik = (input("trafik varmı ?\n"))
+if trafik == "evet":
+    print("vapur ile git")
+else:
+    print("uyumaya devam et")
+
+-----------------------------------------------------------------
+# while döngüsü
+-----------------------------------------------------------------
+
+#while döngüsü sayaç döngüsüdür: kaç defa döngünün çalışacağını belirliyoruz
+# herhangi bir ifadenin bool değeri False olana kadar belirlenen işlemi yapmaya devam eder
+sayac=0
+while sayac < 10:
+    print(sayac)
+    sayac=sayac + 1
+print('çıkışı göster')
+-------------------------------------------------
+
+
+-----------------------------------------------------------------
+#iç içe while döngüsü
+-----------------------------------------------------------------
+
+d=0
+while d < 3:
+    print(d, 'dış döngü')
+    i= 0
+    while i<2:
+        print(i, 'iç döngü')
+        i +=1
+    d += 1
+print('çıkış')
+
+
+
+0’ın bir sayı, “0”’ın ise bir karakter dizisi olduğunu unutmayın. Sayı olan 0’ın bool değeri False’tur, ama karakter dizisi olan “0”’ın değeri True’dur.
+
+
+-----------------------------------------------------------------
+# for döngüsü
+-----------------------------------------------------------------
+# for döngüsünü bir değişken içindeki her bir öğeyi tek tek ele alıp, iki nokta üst üste işaretinden sonra yazdığımız kod bloğunu bu öğelere tek tek uyguluyor.
+
+# for değişken_adı in değişken:
+    # yapılacak_işlem
+
+# tr_harfler = "şçöğüİı"
+# for harf in tr_harfler:
+    #print(harf)
+
+# sayılar ile döngü kurulamaz. karakter dizeleri ile döngü kurulur. Sayılar ile işlem yapmak için sayıları önce karakter dizisi olarak tanımlayım işlem sıranda sayıya çevirmeliyiz
+
+sayilar = "12345678" #12345678 yerine "12345678" şeklinde karakter dizesine çevrildi.
+for sayi in sayilar:
+    print(int(sayi)*2) #"12345678" karakter dizesi olduğu için int(sayi) ile tekrar sayıya çevrilip işlem yapıldı.
+
+
+--------------------------------------------------------------------
+
+parola_karakteri = "123456789"
+while True:
+    parola = input("parola : ")
+    if bool(parola) != True:
+        print("parola boş bırakılamaz")
+    elif parola == "111":
+        print("giriş başarılı")
+        break
+    for karakter in parola:
+        if karakter not in parola_karakteri:
+            print ("sayı giriniz")
+    else:
+        print("tekrar deneyin")
+
+-------------------------------------------------------------------
+
+isgunu = "evet" or "hayır"
+while isgunu == "evet" or "hayır":
+    cevap = (input("iş günü mü? \n"))
+
+
+    if cevap =="evet":
+        print("işe gitmek için hazırlan \n")
+
+        for t in range(3):
+            trafik = (input("trafik var mı?\n"))
+
+            if t == 2:
+                print("3 defa hatalı girdiniz")
+                break
+
+            if trafik == "var":
+                print("vapurla git \n")
+                break
+
+            elif trafik == "yok":
+                print("arabayla git \n")
+                break
+
+            elif not trafik:
+                print("t boş geçilemez \n")
+
+            elif trafik != "var" or "yok":
+                print("var yada yok şeklinde gir")
+        break
+
+
+    elif cevap =="hayır":
+        print("yat uyu \n")
+        break
+
+    elif not cevap:
+        print ("cevap boş geçilemez")
+
+    elif cevap != "evet" or "hayır":
+        print("evet yada hayır şeklinde girin")
+
+
+
+
+
+-----------------------------------------------------------------
+range # aralık belirleme. 3 defadan fazla giriş denemesiyapılamaz. parola 3 ve 8 karakter olmalı
+-----------------------------------------------------------------
+
+for p in range(3):
+    parola = input("parola belirleyin: ")
+    if not parola:
+        print("parola bölümü boş geçilemez!")
+    elif parola == "123":
+        print("giriş başarılı")
+        break
+    elif p == 2:
+        print("parolayı 3 kez yanlış girdiniz.")
+    elif len(parola) not in range(3, 8):
+        print("min3,max 8 karakter girin")
+    else:
+        print("tekrar deneyin")
+--------------------------------------------------------------
+
+for i in range(4):# i için 4 defa hatalı girilebilir
+    isgunu = (input("iş günü mü? \n"))
+
+    if i == 2:# 3 denemede uyarı 2 yazılıyor çünkü deneme 0 dan başlıyor. 0,1,3
+        print("3 defa hatalı girdiniz. Son Hakkınız \n ")
+
+    elif isgunu == "hayır":
+        print ("yat uyu")
+        break
+
+    elif isgunu =="evet":
+
+        for t in range(3):
+            trafik = (input("trafik var mı?\n"))
+
+            if t == 2:
+                print("3 defa hatalı girdiniz")
+                break
+
+            if trafik == "var":
+                print("vapurla git \n")
+                break
+
+            elif trafik == "yok":
+                print("arabayla git \n")
+                break
+
+            elif not trafik:
+                print("t boş geçilemez \n")
+
+            elif trafik != "var" or "yok":
+                print("var yada yok şeklinde gir")
+
+        break # evet yada hayır cevabı gelmediği sürece döngüde kalınması için   isgunu = "evet" yapısı kuruldu.#
+
+
+    elif not isgunu:
+        print("i boş geçilemez! \n")
+
+    elif isgunu != "evet" or "hayır":
+        print ("evet yada hayır şeklinde girin \n")
+
+
+
+
+
+-----------------------------------------------------------------
+pass #(-) sayı girilirse hiçbirşey yapmadan devam et
+-----------------------------------------------------------------
+
+while True:
+    sayı = int(input("Bir sayı girin: "))
+    if sayı == 0:
+        break
+    elif sayı < 0:
+        pass
+    else:
+        print(sayı)
+
+-----------------------------------------------------------------
+try… except… as…   #try bloğu işlemlerinde  bir ValueError ile karşılaşırsan bunu görmezden gel
+                   # normal şartlardaki hata mesajını gösterme.
+-----------------------------------------------------------------
+            # bildiğimiz hataları (ValueError,ZeroDivisionError) except olarak ekliyoruz
+while True:
+    try:
+        s1= int(input("1. sayı: "))
+        s2= int(input("2. sayı: "))
+        print(s1/s2)
+    except ValueError:
+        print("sadece sayı girin")
+    except ZeroDivisionError:
+        print("sayıyı 0'a bölemezsiniz")
+
+
+---------------------------------------------------------------------
+try… except… as…    # önce genel olarak hata oluştu alta oluşan hatanın orjinalini gösteriyo
+---------------------------------------------------------------------
+while True:
+    try:
+        s1= int(input("1. sayı: "))
+        s2= int(input("2. sayı: "))
+        print(s1/s2)
+    except (ValueError, ZeroDivisionError) as hata:
+        print("bir hata oluştu!")
+        print("orijinal hata mesajı: ", hata)
+        #raise hata verdirmek isyorsak ekliyoruz
+    except:
+        print("Beklenmeyen bir hata oluştu!")
+        #tanımlamadığız hataları için ekleyebiriz
+
+-----------------------------------------------------------------------------------
+karakter dizileri
+----------------------------------------------------------------------------------
+#kaçıncı karakter dizesi.öğe sırası 0,1,2,3,4. eğer 6 dersek hata verir.
+isim= "züber"
+for i in isim:
+    print(isim[6])
+
+#öğeleri dinamik olarak belirme
+isim= input ("isminiz? :")
+for i in range(len(isim)):
+    print("isminizin {}. harfi {}". format(i+1,isim[i]))
+# isminizin 1. harfi print("isminizin {}. harfi {}".
+
+
+#parça alma[alınacak_ilk_öğenin_sırası:alınacak_son_öğenin_sırasının_bir_fazlası]
+#zuber ismi
+parola="zuberdogan1978"
+print(parola[0:5])
+#ilk 4 son 4 hariç
+parola="www.zuberdogan.com"
+print(parola[4:-4])
+#ilk 4
+parola="www.zuberdogan.com"
+print(parola[:4])
+#son 4
+parola="www.zuberdogan.com"
+print(parola[14:]
+
+#ters çevirme [son_karakter:ilk_karakter::atlama_sayısı]
+parola="zuberdogan1978"
+print(parola[9:4:-1])
+
+#alfebetik sıraya dizme (türkçe harfleri doğru sıralamak için)
+import locale
+locale.setlocale(locale.LC_ALL, "Turkish_Turkey.1254")
+isim = "zübercç"
+print(sorted(isim,key=locale.strxfrm))
+
+#karakterleri değiştirme
+isim = "züber"
+print("Z" + isim[1:])
+
+#ekleme yapma
+isim1 = "Züber"
+isim2 = "Uygar"
+isim3 = "İdil"
+for s in isim1,isim2, isim3:
+    print(s, " Doğan",sep="")
+
+enumerate() #Numaralandırma
+isim = "Züber"
+for h in enumerate(isim):
+    print(h)
+
+-----------------------------------------------------------------------------------
+karakter dizileri metotları
+----------------------------------------------------------------------------------
+# replace() değiştirmek, yerine koymak
+isim="memleket"
+#e leri sil
+print(isim.replace("e",""))
+
+#1.e'yi sil
+print(isim.replace("e","",1))
+
+#1.m'yi M olarak değiştir
+print(isim.replace("m","M",1))
+
+--------------------------------------
+# lower() Büyük ---> Küçük Dönüştürme
+# .replace("I", "ı").replace("İ", "i") türkçe I,ı,İ,i dönüşümü için eklendi
+
+parola= input("Parolanızı giriniz: ")
+parola = parola.replace("I", "ı").replace("İ", "i").lower()
+if parola == "testi":
+    print("parola doğru")
+else:
+    print("tekrar deneyin")
+
+---------------------------------------
+# upper() Küçük ---> Büyük Dönüştürme
+parola = input("Parolanızı giriniz: ")
+parola = parola.replace("ı", "İ").replace("i", "İ").upper()
+if parola == "TESTİ":
+    print("parola doğru")
+else:
+    print("tekrar deneyin")
+
+----------------------------------------
+# islower(), isupper() küçük ve büyük karakter kontrol etme
+parola= input("Parolanızı giriniz: ")
+if not parola.islower():
+    print("parolanızı küçük harfle girin")
+if parola == "testi":
+        print("parola doğru")
+else:
+    print("tekrar deneyin")
+
+
+parola= input("Parolanızı giriniz: ")
+if not parola.isupper():
+    print("parolanızı büyük harfle girin")
+if parola == "TESTİ":
+        print("parola doğru")
+else:
+    print("tekrar deneyin")
+
+
+------------------------------------------
+#capitalize() 1.Karakteri Küçük ---> Büyük Dönüştürme
+parola = input("Parolanızı giriniz: ")
+parola = parola.replace("I", "ı").replace("İ", "i").capitalize()
+if parola == "Testi":
+    print("parola doğru")
+print("parolanız: ", parola, "olarak değiştirildi")
+else:
+print("tekrar deneyin")
+
+
+------------------------------------------
+#title() tüm karakterleein 1.Karakteri Küçük ---> Büyük Dönüştürme
+parola= input("Parolanızı giriniz: ")
+parola = parola.replace("I", "ı").replace("İ", "i").title()
+if parola == "Testi Kırıldı":
+    print("parola doğru")
+    print("parolanız: ",parola, "olarak değiştirildi")
+else:
+    print("tekrar deneyin")
+
+
+-------------------------------------------
+# split()Ayırma -- join() bölünmüş grupları birleştirme
+isim= "züber doğan"
+print(isim.split())
+
+# , kısımlarından ayır
+bilgiler= "züber doğan, 1978, istanbul"
+print(bilgiler.split(","))
+
+# 1.',' den ayır
+bilgiler= "züber doğan, 1978, istanbul"
+print(bilgiler.split(",",1))
+
+
+bilgiler= ['züber', 'doğan', '1978']
+print(" ".join(bilgiler))
+
+
+-------------------------------------------
+# count() sayma
+
+#adana içinde geçen a sayısı
+sehir= "adana"
+print(sehir.count("a"))
+
+#adana 4. karakterinden sonra geçen a sayısı
+sehir= "adana"
+print(sehir.count("a",3))
+
+---------------------------------------------
+# index() and find() sol ---> sağ kaçıncı karakter
+# rindex() and rfind() sol <---sağ
+#index bulamazsa ValueError hatası/ find bulamazsa -1 döndürür
+
+#adana a karakteri kaçıncı karakter
+sehir= "adana"
+print(sehir.index("a"))
+
+#adana 1.karakterden sonra gelen a kaçıncı karakter
+sehir= "adana"
+print(sehir.index("a",1))
+
+
+#adana 1. den 3. kadar karakterler içinde ilk a kaçıncı karakter
+sehir= "adana"
+print(sehir.index("a",1,3))
+
+
+---------------------------------------------------------------
+LİSTELER-[] <
+---------------------------------------------------------------
+liste = ['can','aslı']
+print(type(liste))
+# cevap <class 'list'>
+
+
+#Listelerin Öğelerine Erişmek
+list1=["cuma",["züber"],7,5.9]#listenin içinde karekter dizesi, sayı, float birarada olabilir.
+print(list1[2])
+
+
+------------------------------------------------
+#karakter dizesini split fonksiyonu ile listeye dönüştürme
+ad="züber doğan"
+print(ad.split())
+#cevap ['züber', 'doğan']
+
+#karakter dizesini List fonksiyonu ile  listeye dönüştürme
+alfabe = "abcçde"
+harf_listesi=list(alfabe)
+print(harf_listesi)
+#cevap ['a', 'b', 'c', 'ç', 'd', 'e']
+
+----------------------------------------------------
+#range sayı aralığını ekrana dökmek için list fonk. kullanılır (range veri--->list veriye dönüştürülüyor)
+print(list(range(20)))
+
+-------------------------------------
+#Liste öğlerinde ulaşma. liste öğe sayısı, listenin ilk öğesi, 2. listenin ilk öğwsi
+liste= ['Minas','ganimet',['züber','idil','uygar']]
+print(len(liste))
+print(liste[0])
+print(liste[2][0])
+
+------------------------------------
+#liste verileri değiştirme
+liste= ['Minas','ganimet',['züber','idil','uygar']]
+liste[0]= "minas doğan"
+liste[1] = "ganimet doğan"
+print(liste)
+# ['minas doğan', 'ganimet doğan', ['züber', 'idil', 'uygar']]
+
+------------------------------------
+#listeye veri ekleme
+liste= ['minas','ganimet',['züber','idil','uygar']]
+liste = liste + ['orhan','nagehan']
+print(liste)
+
+------------------------------------
+#listeleri birleştirme
+zuber_aile= ['minas','ganimet']
+idil_aile = ['orhan','nagehan']
+zi_aile = zuber_aile + idil_aile
+print(zi_aile)
+
+------------------------------------
+#listeden öğe çıkarma
+liste=[1,3,5,7]
+del liste [0]
+print(liste)
+
+------------------------------------
+#liste kopyalama
+l1=['can','murat','aslı']
+print(l1)
+l2 = l1
+print(l2)
+
+
+-------------------------------------
+#liste kopyalamada l2 nin l1'in değişikliklerinden etkilenmemesi için list kullanılır
+
+l1=['can','murat','aslı']
+print(l1)
+l2 = list(l1)
+l1[0]="emre"
+print(l1)
+print(l2)
+
+
+---------------------------------------------------------------
+#DEMETLER()-<lass 'tuple'> demetler karakter dizeleri gibi değiştirlemez veri tipi
+---------------------------------------------------------------
+demet = ('can','murat','aslı')
+print(type(demet))
+
+-------------------------------------
+#tuple fonksiyonu ile karakter dizesini demet'e dönüştürme
+alfabe = "abcçdefgğhıijklmnoöprsştuüvyz"
+harf_listesi=tuple(alfabe)
+print(harf_listesi)
+
+
+------------------------------------------
+#Tek Öğeli bir Demet Tanımlama
+demet1= ('Minas')
+print(type(demet1))
+#tek öğe demet tanımlamak için , eklenmeli
+demet2= ('Minas',)
+print(type(demet2))
+
+
+---------------------------------------------
+#demet öğlerinde ulaşma. demet öğe sayısı, demet in ilk öğesi, 2. demet'in ilk öğesi
+demet= ('Minas','ganimet',('züber','idil','uygar'))
+print(len(demet))
+print(demet[0])
+print(demet[2][0])
+print(type(demet))
+
+---------------------------------------------------------
+#Listelerin Metotları
+---------------------------------------------------------
+#append() listenin sonuna TEK öğe ekleme
+liste= ['minas','ganimet']
+liste.append ('orhan')
+print(liste)
+
+------------------------------------------
+#insert() listenin istenilen kısmına TEK öğe ekleme
+liste= ['can','ayşe']
+liste.insert(1,'sülü')
+print(liste)
+
+------------------------------------------
+#remove() listeden Tek öğe silme
+liste= ['can','sülü','ayşe']
+liste.remove('sülü')
+print(liste)
+
+-----------------------------------------
+#reverse() listeyi ters çevirme
+liste= ['can','sülü','ayşe']
+liste.reverse()
+print(liste)
+
+-----------------------------------------
+#sort() listeyi sıraya dizme
+liste= ['can','sülü','ayşe',]
+liste.sort()
+print(liste)
+
+slist = [5,10,76,89,3,8]
+slist.sort()
+print(slist)
+
+#ters sıralama
+slist = [5,10,76,89]
+slist.sort(reverse=True)
+print(slist)
+
+---------------------------------------------------------
+#Dosya olşturma\yazma\okuma\otomatik kapama
+---------------------------------------------------------
+#dosya oluşturma\yazma
+dt=open("dt.txt","w")
+dt.write(
+    "züber :1978 \n "
+    "uygar :2004 \n "
+    "minas :1933 \n ")
+dt.close()
+
+---------------------------------------
+#dosya okuma
+#read() bütün satırları okuyor başa dönmüyor
+dt=open("dt.txt")
+print(dt.read())
+
+#readline() tüm satırları okuyor ilk satırı gösteriyor. Başa dönmüyor
+dt=open("dt.txt")
+print(dt.readline())
+
+-----------------------------------------
+#with otomatik dosya kapama
+with open("dt.txt") as dt:
+    print(dt.read())
+
+
+---------------------------------------------------------
+#FONKSİYONLAR
+---------------------------------------------------------
+
+# def ile başlamış,
+#‘kayıt_oluştur’ isimlendirilmiş.
+# parentez () içerisine paremetreler girilmiş
+# : ile bitmiş
+# 1. Satırdan sonra girintili yazılmış
+# Yani bir fonksiyonu tanımlarken belirlediğimiz adlara parametre denir (isim, soyisim, şehir).
+def kayit (isim, soyisim, sehir): # 1.Kısım: FONKSİYON TANIMI
+
+    print("isim           : ", isim)
+    print("soyisim        : ", soyisim)
+    print("şehir          : ", sehir)
+
+
+# def ile aynı hizada olmalı
+# Yaynı fonksiyonu çağırırken belirlediğimiz adlara ise argüman deniyor.("Fırat", "Özgül", "İstanbul")
+kayit ("Fırat", "Özgül", "İstanbul") # 2.Kısım: FONKSİYONUN ÇAĞRILMASI
+
+--------------------------------------
+# * kullanımı print fonsiyonunda öğleri araları boşluk ile ayırır
+print(*"züber doğan") #z ü b e r   d o ğ a n
+
+
+# * kullanımı fonsiyonda ise demet olarak biraraya getiriyor
+def ad_soyad(*bilgiler):
+    print(bilgiler)
+
+ad_soyad ("Züber","Doğan") #('Züber', 'Doğan')
+
+
+-------------------------------------
+#isimli parametreli fonksiyonlar
+--------------------------------------
+def islem(p1,p2,p3):
+#def islem(p1,p2=3,p3='default isim'):  #paremetreleri default değer atama sağa doğru zorunlu p2=3 ise p3='' olmalı
+    print(f'işlem sonucu {p1*p2}, işlemi tekrarla {p3}')
+
+sayı1=int(input('1.değer: '))
+sayı2=int(input('2.değer: '))
+isim=input('adınızı girin')
+
+islem(p1=sayı1,p2=sayı2,p3=isim)
+
+-------------------------------------
+#return işlemin sonucunu alma-return den sonra kod yazılmaz. Geçersiz olur!!!
+--------------------------------------
+
+s1 = int(input("uzunluk ? \n"))
+s2 = int(input("genişlik ? \n"))
+s3 = s1 * s2
+def m2_bul():
+    print("print ile hesaplanan {} değerinin sadece ekrana yazdırılıyor.\n ".format(s3))
+    print("return ise hesaplanan {} değerini işlemde kullanımına yarıyor. Veri tipi önemli!!!  bu işlem için sayı olmalı".format(s3))
+    print(type(s3))
+    return s3
+m2_bul()
+
+fiyat = int(input("m2 fiyatı gir ? ? \n"))
+def m2_fiyat():
+    mf = s3 * fiyat
+    print(" print çıktısı {}. \n ".format(mf))
+    print(type(mf))
+    return mf
+m2_fiyat()
+----------------------------------------------------------
+def maliyet():
+    for i in range(3):
+        try:
+            gun = input("kaç gün çalışıyorsun? ")
+            gidis = input("kaça geliyorsun ")
+            gelis = input("kaça gidiyorsun ")
+            maliyet = int(gun) * (int(gidis) + int(gelis))
+            if maliyet >= 0 and maliyet <= 100:
+                print("düşük maliyet")
+            elif maliyet >= 101 and maliyet <= 200:
+                print("orta maliyet")
+            elif maliyet >= 201 and maliyet <= 300:
+                print("yüksek maliyet")
+            else:
+                print("acilen çözüm bul")
+        except ValueError:
+            print ("sadece sayı girin")
+maliyet()
+
+-------------------------------------
+#sonsuz parametreli fonsiyonlar
+--------------------------------------
+#sonsuz isimsiz paremetre veri tipi tuple (demet)
+def islem(*args): #isimsiz paremetreleri sonsuz yapmak için * kullanılır
+    toplam = 0
+    for i in args:
+        toplam = toplam + i
+    return toplam
+
+
+sonuc = islem(10, 20)
+print(sonuc)
+
+
+--------------------------------
+#sonsuz isimli paremetre veri tipi (sözlük)
+def islem(**kwargs):#isimli paremetreleri sonsuz yapmak için ** kullanılır
+    for anahtar,deger in kwargs.items():
+        print(f' {anahtar}, {deger}')
+
+
+sonuc= islem(ad='züber', soy_ad='doğan', ad2='uygar', soy_ad2='doğan')
+print(sonuc)
+
+----------------------------------------
+#sonsuz isimsiz ve isimli paremetre kullanımı
+def sonsuz(*args, **kwargs):
+    print('args', args)
+    print('kwargs', kwargs)
+
+
+sonsuz('isimsiz1p','isimsiz2p',isim='züber',soyad='doğan')
+
+
+-------------------------------------------------------------------------
+#index and numeric
+-------------------------------------------------------------------------
+
+# 1.Sayaçlı ve += operatörlüdöngü elemanları
+items = [8, 23, 45, 12, 78]
+counter = 0
+
+for value in items:
+    print(counter, value)
+    counter += 1
+# Sonuç:
+    #    0 8
+    #    1 23
+    #    2 45
+    #    3 12
+    #    4 78
+-------------------------------------------------------------
+# enumerate() 2. Yöntemi kullanarak öğeleri döngüye sokma.
+items = [8, 23, 45, 12, 78]
+
+for i in enumerate(items):
+    print("index/value", i)
+# Sonuç:
+    #    index/value (0, 8)
+    #    index/value (1, 23)
+    #    index/value (2, 45)
+    #    index/value (3, 12)
+    #    index/value (4, 78)
+-------------------------------------------------------------------
+#3.Ayrı index ayrı kullanma
+value. items = [8, 23, 45, 12, 78]
+
+for index, value in enumerate(items):
+    print("index", index, "for value", value)
+
+#Sonuç:
+    #    index 0 for value 8
+    #    index 1 for value 23
+    #    index 2 for value 45
+    #    index 3 for value 12
+    #    index 4 for value 78
+
+------------------------------------------------------------------------
+# 4.index Sayıyı herhangi bir artışla değiştirebilirsiniz.
+items = [8, 23, 45, 12, 78]
+
+for i, value in enumerate(items, start=1000):
+    print(i, value)
+#Sonuç:
+    #    1000 8
+    #    1001 23
+    #    1002 45
+    #    1003 12
+    #    1004 78
+--------------------------------------------------------------------------
+# 5.ile tomatik sayaç artışı
+
+range(len(...)).
+items = [8, 23, 45, 12, 78]
+
+for i in range(len(items)):
+    print("Index:", i, "Value:", items[i])
+# Sonuç:
+    #    ('Index:', 0, 'Value:', 8)
+    #    ('Index:', 1, 'Value:', 23)
+    #    ('Index:', 2, 'Value:', 45)
+    #    ('Index:', 3, 'Value:', 12)
+    #    ('Index:', 4, 'Value:', 78)
+--------------------------------------------------------------------------------
+
+# 6. for - in döngüsü içinde işlevini kullanma.
+items = [8, 23, 45, 12, 78]
+
+def enum(items, start=0):
+    counter = start
+
+    for value in items:
+        print(counter, value)
+        counter += 1
+enum(items)
+# Sonuç:
+    #    0 8
+    #    1 23
+    #    2 45
+    #    3 12
+    #    4 78
+
+
+---------------------------------------------------------
+MODÜLLER
+---------------------------------------------------------
+#os işletim sistemi modülü
+import os #os modülünü içe aktarıldı. tüm modülde 1 defa aktarılması yeterli
+if os.name !='nt': # modul(os).fonsiyon(name) şeklinde yazılır. 'nt' windows işletim sisteminde çalışır demek
+    print("sadece windows ile çalışır")
+else:
+    print("hoş geldiniz")
+-----------------------------------------
+#os modülü ile makedirs() klasör oluşturma fonksiyonu
+import os
+os.makedirs('EDUCATE')
+
+-------------------------------------------
+# subprocess farklı programları çalıştırma modülü
+import subprocess
+subprocess.call('notepad.exe')
+
+import subprocess as sp #modül ismini sp olarak değiştirildi
+sp.call('notepad.exe')
+
+-----------------------------------------------
+#webbrowser internet tarayıcı
+import webbrowser as web #modül ismini web olarak değiştirildi
+web.open('www.sozcu.com.tr')
+
+----------------------------------------------
+#modül içindeki bazı fonksiyonları içe aktarma
+
+-------------------------------------------------
+#modülü (kendi oluşturduğumuz) her yerden içe aktarma
+import sys
+sys.path.append(r'D:\PROGRAMLAR\database\python\Çalışmalar\phyton_p1\yol_maliyet.py') #modülün olduğu dosya yolu verildi
+
+------------------------------------------------------
+#Modülü Farklı bir modülde çalıştırma.
+-------------------------------------------------------
+#     1. yol
+#from modül_adı import *
+from calisanlar import *
+
+#     2.yol
+#import sys
+#sys.path.append(r'E:\PROGRAMLAR\database\python\Çalışmalar\phyton_p1\EDUCATE\calisanlar.py')
+#Modül ismi oluşturulurken dikkat edilmeli tükçe karakter, özel karakter kullanılmamalı
+
+#python baktığı yollar
+import sys
+from pprint import pprint
+pprint(sys.path)
+
+
+--------------------------------------------------------
+Sınıf(class) #Nesne Tabanlı programlama
+---------------------------------------------------------
+class ile def farkları ve benzerlikleri
+
+
+# çalışan() veya modül olarak çağırma (from modül import fonksiyon) fonksiyon çağrılmadığı sürece çalışmaz
+def calisan():
+    ad = 'züber'
+    soyad = 'doğan'
+
+    print(ad)
+    print(soyad)
+
+# aşağıdaki kodlar doğrudan veya tanımlanan modül ismi ile (modül import) ile çalışır.
+class calisan():
+    ad = 'züber'
+    soyad = 'doğan'
+
+    print(ad)
+    print(soyad)
+
+----------------------------------------------
+# class attribute çağırma ve yeni ekleme
+----------------------------------------------
+class calisan():
+    ad = 'züber'
+    soyad = 'doğan'
+
+#class attribute çağırma şekli
+print(calisan.ad)
+
+#class'a yeni attribute ekleme
+calisan.yas = "44"
+print(calisan.yas)
+-------------------------------------------------
+#Aynı class içindeki fonksiyonları kullanma
+------------------------------------------------
+class MyClass(object):
+    def xxx(self):
+        self.a = 10
+        self.b = 15
+        self.c = 20
+
+    def yyy(self):
+        self.xxx()
+        print self.a
+        print self.b
+
+#Create an instance of the class
+obj = MyClass()
+
+obj.yyy()
+
+
+------------------------------------------------
+# instantiation (örnekleme) işlemi-Class özelliklerini taşıyan üye/üyeler oluştuma
+# def çağırma ör:Sipariş() olarak, benzeri  class ta örnekleme jilet = Sipariş() olarak yapılıyor.
+
+class siparis():
+    firma = ''
+    miktar = 0
+    sipariş_tarihi = ''
+    teslim_tarihi = ''
+    stok_adedi = 0
+
+jilet = siparis()
+
+#kalem üyesi ekleme
+kalem = siparis()
+#kalem üyesinin özelliklerine ulaşma
+kalem.firma
+kalem.miktar
+
+
+---------------------------------------------------
+#sınıf Niteliği ve Örnek Niteliği
+----------------------------------------------------
+
+# class ve Nesne (Örnek) Attribute çağırma
+class Personel():
+    kabiliyetleri = ['sınıf niteliği']
+
+    def __init__(self):
+        self.kabiliyetleri = ['örnek niteliği']
+
+#sınıf niteliğine erişmek için
+#sınıf adını kullanıyoruz
+print(Personel.kabiliyetleri)
+
+#örnek niteliğine erişmek için
+#örnek adını kullanıyoruz
+ahmet = Personel()
+print(ahmet.kabiliyetleri)
+
+----------------------------------------------------
+#constructor (yapıcı) metot:İlklemek
+-----------------------------------------------------
+class Personel():
+    #class attributes
+    statu = ['işçi']
+
+    #constructor (yapıcı metod)
+    def __init__(self):
+        self.ad = input("personel adı girin \n")
+
+    #instance methods
+    def detay(self):
+        #object attributes
+        self.statu= input("ünvan girin \n")
+        self.yas = int(input("yas girin \n"))
+
+# object (instance)
+p1= Personel()
+
+print(f'p1 ismi           :{p1.ad}')
+print(f'{p1.ad} adlı personel için:')
+
+p1.detay()
+print(f'{p1.ad} ünvanı      :{p1.statu}')
+print(f'{p1.ad} yaşı        :{p1.yas}')
+
+p2= Personel()
+
+-------------------------------------------------------
+#Farklı bir class tan kalıtım alma
+--------------------------------------------------------
+
+class Personel():
+    def __init__(self):
+        self.ad = input("personel adı girin \n")
+        self.yas = int(input("yas girin \n"))
+
+#Personel.__init__(self) Detay class eklendiği için aşağıdakilere gerek kalmadı
+# p1= Personel()
+# print(f'p1 ismi               :{p1.ad}')
+# print(f'{p1.ad} yaşı            :{p1.yas}')
+
+class Detay(Personel):
+    def __init__(self):
+        Personel.__init__(self)# p1=personel yapmadan personel clasının özelliklerini çağırmak için
+        self.bolum = input("Bölüm girin \n")
+        self.unvan= input("Ünvan girin \n")
+
+d1= Detay()
+
+print(f'{d1.ad} Bölümü           :{d1.bolum}')
+print(f'{d1.ad} Ünvanı           :{d1.unvan}')
+
+
+--------------------------------------------------------------------------------------------------------------
+#Miras alma (inherit) ve super() kullanımı
+--------------------------------------------------------------------------------------------------------------
+#taban sınıf ('base class'. 'super class' veya 'parent class') Birkaç farklı sınıfta ortak olan nitelik ve metotları barındıran bir sınıf türüdür.
+class Cari:
+    musteri = []
+
+    # self.isim = isim (örnek Niteliğine dönüştürme)
+    #isim parametresini sınıfımızın başka bölgelerinde de kullanabilmek.
+    # self kelimesini parametremizin başına yerleştirerek, bu parametreyi sınıfın başka yerlerinden de erişilebilir hale getiriyoruz.
+    def __init__(self, isim):
+        self.isim = isim
+        self.musteri_ekle() #instance method (Örnek Metod): bir sınıfın örnekleri vasıtasıyla çağrılabilen fonksiyonlardır
+
+        #self öğesi ile sınıf niteliklerine, örnek niteliklerine ve örnek metodlarına ulaşabiliyoruz.
+    def musteri_ekle(self):
+        self.musteri.append(self.isim) #Cari.musteri.append(self.isim)
+        print('{} adlı musteri cariye eklendi'.format(self.isim))
+#m1 = Cari('idil')
+#print(f'müşteri ismi:    {m1.isim}')
+
+
+# alt sınıf (subclass) kendilerinden türedikleri taban sınıfların metot ve niteliklerini miras yoluyla devralır.
+class Detay(Cari):
+    musteri_detay = []
+
+    def __init__(self, isim, vergi_dairesi, vergi_no, sehir): #(self, *args) argümnaları tek tek yazmamak için)
+        super().__init__(isim) # (*args)
+        self.vergi_dairesi = vergi_dairesi
+        self.vergi_no = vergi_no
+        self.sehir = sehir
+        self.detay_ekle()
+
+    def detay_ekle(self):
+        self.musteri_detay.append(self.vergi_dairesi)
+        print('musteri detayına {} vergi dairesi eklendi'.format(self.vergi_dairesi))
+
+        self.musteri_detay.append(self.vergi_no)
+        print('musteri detayına {} vergi no eklendi'.format(self.vergi_no))
+
+        self.musteri_detay.append(self.sehir)
+        print('musteri detayına {} sehir eklendi'.format(self.sehir))
+
+m1 = Detay(
+    input('müşteri adını girin \n'),
+    input('müşteri vergi dairesini girin \n'),
+    int(input('müşteri vergi no \n')),
+    input('müşteri Şehri\n'))
+
+print(f'{m1.isim} carisinin vergi dairesi        :{m1.vergi_dairesi}')
+print(f'{m1.isim} carisinin vergi no             :{m1.vergi_no}')
+print(f'{m1.isim} carisinin Şehri                :{m1.sehir}')
+
+
+-------------------------------------------------------------------------------------------
+class Personel():
+    personel = []
+
+    def __init__(self, isim):
+        self.isim = isim
+        self.personel_ekle()
+
+    def personel_ekle(self):
+        self.personel.append(self.isim)
+        print('{} adlı personel eklendi'.format(self.isim))
+
+class Mesai(Personel):
+    maas = 3000
+    eksaat = 50
+    toplam = []
+
+    def __init__(self, isim, saat, tutar):
+        super().__init__(isim)
+        self.saat = saat
+        self.tutar = tutar
+        self.hesap()
+        self.tutar_ekle()
+
+    def hesap(self, maas=None):
+        if self.saat <= 40:
+            self.maas = maas
+            return maas
+
+        if self.saat > 40:
+            self.tutar = self.maas + (self.eksaat * (self.saat - 40))
+            return self.tutar
+
+    def tutar_ekle(self):
+        self.toplam.append(self.tutar)
+        print('{} adlı personele alacak eklendi'.format(self.isim))
+
+    @classmethod # c1 fonksiyonu sınıf metoduna dönüştürme işlevi görüyor
+    def c1(cls, maas=None):
+        cls.maas = maas
+        return cls.maas
+
+    @classmethod
+    def c2(cls, eksaat=None):
+        cls.eksaat = eksaat
+        return cls.eksaat
+
+m1 = Mesai(input("adınızı girin \n"), int(input("çalışma saati girin \n")), [])
+
+print(f'{m1.isim} Personelinin maaşı        :{Mesai.maas}')
+print(f'{m1.isim} Personelinin mesaisi      :{m1.tutar - Mesai.maas}')
+print(f'{m1.isim} Personelinin maaş+mesai   :{m1.tutar}')
+
+---------------------------------------------------------------------------------------------------------------
+#Class Üyeleri: # sınıf niteliği, gizli Öğe, yarıgizli öğe, örnek metodu @classmethod, sınıf metodu, statik metot @staticmethod
+---------------------------------------------------------------------------------------------------------------
+
+class Sinif():
+    sinif_niteligi = 'sınıf niteliği'
+    __gizli = 'gizli Öğe' # dışarıdan normal yöntemlerle erişilemez
+    _yarigizli = 'yarıgizli öğe' #sınıf dışından bu öğeyi değiştirmeye kalkışmamamız gerektiğini ifade eder. Dışardan erişilebilir.
+
+
+    def gizli_metot(self):
+        print('gizli Öğe')
+
+    def ornek_metodu(self):
+        print('örnek metodu')
+
+
+    # bir fonksiyonu sınıf metoduna dönüştürme işlevi görüyor
+    # örnek_metodu(), self yardımıyla örnek niteliklerine erişiyor.
+    # sınıf_metodu() ise cls yardımıyla sınıf niteliklerine erişiyor.
+    # Sınıf metodu tanımlamak için @classmethod bezeyicisi kullanılır
+    @classmethod
+    def sinif_metodu(cls):
+        print('sınıf metodu')
+
+
+    # eğer sınıf içinde tanımlayacağınız fonksiyon herhangi bir örnek ya da sınıf niteliği üzerinde herhangi bir işlem yapmayacaksa
+    # self veya cls benzeri kelimeler almaz. Çünkü bu tür sınıfların örnek veya sınıf nitelikleri ile herhangi bir işi yoktur.
+    @staticmethod
+    def statik_metot():
+        print('statik metot')
+
+s = Sinif()
+
+print(s.sinif_niteligi) #döndürülen 'sınıf niteliği'
+
+s.gizli_metot() #döndürülen 'gizli Öğe'
+
+print(s._yarigizli) #döndürülen 'yarıgizli öğe'
+
+s.ornek_metodu()#döndürülen 'örnek metodu'
+
+s.sinif_metodu()#döndürülen 'sınıf metodu'
+
+s.statik_metot()#döndürülen 'statik metot'
+
+print(dir(s)) #class içinde ki tüm üyeler
+#['_Sinif__gizli', '__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__',
+#'__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__',
+#'__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__',
+#'__subclasshook__', '__weakref__', '_yarigizli', 'gizli_metot', 'ornek_metodu', 'sinif_metodu',
+#'sinif_niteligi', 'statik_metot']
+
+
+------------------------------------------------------------------------------------------
+#Metottan Niteliğe @property Örnek Niteliğini Sınıf Niteliğine Dönüştürme
+-----------------------------------------------------------------------
+#'no' örnek liteliğini değiştirmek istediğimizde 'no' miras olarak alınmış olması sorun yaratır
+# 'no' @property sınıf niteliğine dönüştürülür. sonra 'id' olarak isimlendirilebilir.
+
+class Ekip():
+    personel = []
+
+    def __init__(self,no,isim):
+        self.id= no #'self._no' yerine 'self.id' yazıldı
+        self.isim = isim
+
+    def personel_ekle(self):
+        self.personel.append(self.id) #'self._no' yerine 'self.id' yazıldı
+        self.personel.append(self.isim)
+
+    @property
+    def no(self):
+        return self.id #'self._no' yerine 'self.id' yazıldı
+
+p1 = Ekip (1,'züber')
+print(f'personel no:{p1.no}, personel ismi:{p1.isim}')
+
+p1.isim='uygar'
+p1.id='2'  #'p1.no' yerine 'p1.id' ile isim değişikliği yapıldı.
+
+(print(f'personel no:{p1.no}, personel ismi:{p1.isim}'))
+
+
+
+------------------------------------------------------------------------------------------
+#Salt Okunur Nitelikler  - Değer döndürmek @property,  Değer atamak @?.setter,    Değer silmek @?.deleter
+-------------------------------------------------------------------------------------------
+
+#p1 pessonelinin no argümanını salt okunur veya değiştirilebilir yapma
+class Ekip():
+    #class attributes (Sınıf Niteliği): salt verileri tutan değişkenler
+    personel = []
+
+    def __init__(self,no,isim,statu,yas):
+        self.no = no #self.no ile salt okunur: (AttributeError: can't set attribute)
+        self.isim = isim
+        self.statu = statu
+        self.yas = yas
+        self.personel_ekle()
+
+    def personel_ekle(self):
+        self.personel.append(self._no)
+        self.personel.append(self.isim)
+        self.personel.append(self.statu)
+        self.personel.append(self.yas)
+
+
+    #@property ile salt okunur: ('self.no' AttributeError: can't set attribute)
+    #@property ile değişiklik yapılabilir 1.yol (__init__ altında self._no)
+    @property
+    def no(self):
+        return self._no
+
+    #@property ile değişiklik yapılabilir 2.yol (__init__ altındaki 'self.no')
+    @no.setter
+    def no(self,yeni_deger):
+        self._no = yeni_deger
+        return self._no
+
+
+# object (instance)
+p1 = Ekip('1','züber','müdür','44')
+print("kayıt")
+print("-------------------------")
+print(p1.no,p1.isim,p1.statu,p1.yas)
+print("-------------------------\n")
+
+print("argüman değişikliği")
+p1._no = '2' #no değişikliği salt okunur / değiştirlebilir
+p1.isim = 'Selim'
+p1.statu = 'isci'
+p1.yas = '30'
+print("-------------------------")
+print(p1.no,p1.isim,p1.statu,p1.yas)
+
+
+
+------------------------------------------------------------------------------------------------------------------
+# Veri Tabanı İşlemleri
+-------------------------
+# VT Oluştur/Bağla-->İmleç Oluştur-->Tablo Oluştur-->Veri Giriş-->Veri İşle-->Veri Seç-->Veri Al/Değişkene Ata
+-------------------------------------------------------------------------------------------------------------------
+
+import sqlite3 # ismini değiştirebiliriz import sqlite3 as sql
+
+with sqlite3.connect('z1.db') as vt:# z1.db isimli veri tabanı oluşturduk veya olanla bağlantı kurduk
+                                    # with veri tabanı ile işlem bittiğinde otomatik kapnması içim
+
+    im = vt.cursor() #vt üzerinde işlem yapabilmek için imleç oluşturulmalı
+
+    im.execute("""CREATE TABLE IF NOT EXISTS personel
+    (no,isim,statu,yas)""")
+
+    im.execute("""INSERT INTO personel VALUES
+    ('1','züber','müdür','44')""")
+
+    vt.commit() #verileri veri tabanına işlemek için kullanılıyor
+    #vt.close() #veri tabanı kapatma bu şekldede yapılabilir
+
+    im.execute("""SELECT * FROM personel""") #verileri seçtik
+    veriler = im.fetchall() #seçilen veriler veri tabanında fetchall ile alınıp veriler adlı değişkene atandı
+
+    print (veriler)
+
+---------------------------------------------------------------------------------------------------------------
+# Parametreli Sorgular- Veri Tabanına dış kaynaktan veri alma
+------------------------------------------------------------------------------------------------
+import sqlite3
+
+with sqlite3.connect('z1.db') as vt: #with veri tabanı ile işlem bittiğinde otomatik kapnması içim
+    im = vt.cursor()
+
+    veriler = [('1','mehmet','müdür','44'),
+               ('2','salih','şef','39'),
+               ('3','ayşe','şef','37'),
+               ('4','su','işçi','22')]
+
+    im.execute("""CREATE TABLE IF NOT EXISTS personel
+    (no,isim,statu,yas)""")
+
+    for veri in veriler:
+        im.execute("""INSERT INTO personel VALUES
+            (?, ?, ?, ?)""", veri)
+    vt.commit()
+
+    im.execute("""SELECT * FROM personel""")
+    veriler = im.fetchall()
+    print (veriler)
+
+------------------------------------------------------------------------------
+#veri tabanındaki tabloları ve sütün başlıklarını listeleme
+--------------------------------------------------------------------------------
+import sqlite3
+
+vt = sqlite3.connect('z1.db')
+im = vt.cursor()
+im.execute("SELECT name FROM sqlite_master WHERE type='table';")
+print(im.fetchall()) #tablo listeleme ör. ([('personel',)])
+print(im.execute("SELECT sql FROM sqlite_master").fetchone()) # tablodaki stun başlıklarını listeleme (ÖRN('CREATE TABLE personel\n(no,isim,statu,yas)',))
+
+----------------------------------------------------------------------------
+#Veri Tabanını Okuma/ Yazma
+-----------------------------------------------------------------------------
+
+class Cari():
+    import sqlite3
+    with sqlite3.connect('z1.db') as vt:
+        im = vt.cursor()
+
+        im.execute("""CREATE TABLE IF NOT EXISTS cari
+                    (no, isim, vkn)""")
+
+        im.execute("""SELECT vkn FROM cari""")
+        vkn = im.fetchall()
+        print(vkn)
+
+        cari = [(55,(input('müşteri adını girin \n')), (int(input('müşteri vergi no \n')))) ]
+        for detay in cari:
+            im.execute("""INSERT INTO cari VALUES
+                (?, ?, ?)""", detay)
+        vt.commit()
+
+m = Cari()
+
+------------------------------------------------------------------------------------------------------------
+class Product():
+    import sqlite3
+    with sqlite3.connect('z1.db') as vt:
+        im = vt.cursor()
+
+        im.execute("""CREATE TABLE IF NOT EXISTS Urunler
+                    (id,barkod,isim,fiyat)""")
+
+        im.execute("""SELECT * FROM Urunler""")
+
+        urun = im.fetchall()
+
+        while True:
+            try:
+                barkod = int(input('(1) barkod girin \n'))
+                barkod = int(barkod)
+                for u in urun:
+                    while barkod == u[1]:  # kontrol için int değeri str ye dönüştürüldü.
+                        print(type(u[1]), u[1])
+                        print("bu barkod sistemde kayıtlı \n")
+                        print("-----tekrar barkod girin---------")
+                        barkod = int(input('(2)  barkod girin \n'))
+                break
+            except ValueError:
+                print("***barkod sayılardan oluşmalı ve boş bırakılmamalıdır***")
+
+        while True:
+            isim = input('ürün adını girin \n')
+            if not isim:
+                print("** ürün adı boş bırakılmamalıdır **")
+                continue
+            elif isim:
+                print(f'{isim} ismi ürüne kaydedildi')
+                break
+
+        while True:
+            fiyat = int(input('ürün fiyatını girin \n'))
+            if not fiyat:
+                print("** ürün fiyatı boş bırakılmamalıdır **")
+                continue
+            elif fiyat:
+                print(f'{fiyat} ürüne kaydedildi')
+                break
+
+        id = 2000
+        for id, value in enumerate(urun, start=2001):
+            pass
+        urun = [(id,barkod,isim,fiyat)]
+
+        for detay in urun:
+            im.execute("""INSERT INTO Urunler VALUES
+                    (?,?,?,?)""", detay)
+        vt.commit()
+----------------------------------------------------------------------------------------------
+#Tablo listesi Kolaonlar ve değer listesi --- Tek bir SQLite tablosu satırı ekle-güncelle-sil
+---------------------------------------------------------------------------------------------
+
+import sqlite3
+
+with sqlite3.connect('z1.db') as vt:
+    im = vt.cursor()
+
+    print("----------tablo listesi ve Kolonlar-------------")
+    im.execute("SELECT name FROM sqlite_master")
+    print(im.execute("SELECT sql FROM sqlite_master").fetchone())
+    print(im.fetchall())
+
+    print("----------cariler tablo değerleri-------------")
+    im.execute("""SELECT * FROM cariler""")
+    cari = im.fetchall()
+    print(cari)
+
+    #Tek bir SQLite tablosu satırını veri giriş
+    #im.execute("""INSERT INTO cariler VALUES (?, ?, ?)""",(1001, 5544789, 'test2') )
+    #vt.commit()
+
+    #Tek bir SQLite tablosu satırını güncelleme
+    #im.execute("UPDATE cariler SET id = 100010,vkn = 225544, isim = 'Cari2' WHERE id= 1000")
+    #vt.commit()
+
+
+    #Tek bir SQLite tablosu satırını veri silme
+    #im.execute("delete from cariler  where id= ? ", (1000,))
+    #vt.commit()
+
+    print("----------Urunler tablo değerleri-------------")
+    im.execute("""SELECT * FROM Urunler""")
+    urun = im.fetchall()
+    print(urun)
+--------------------------------------------------------------------------------------------------
+import sqlite3
+def inserts(data_list):
+    try:
+        vt = sqlite3.connect('Z2.db')
+        im = vt.cursor()
+        print("vt ile bağlantı kuruldu ve im'leç (cursor) oluşturuldu")
+
+        tablo_olustur = '''CREATE TABLE IF NOT EXISTS Urunler (
+                                    id INTEGER PRIMARY KEY,
+                                    name TEXT NOT NULL,
+                                    tag TEXT NOT NULL UNIQUE,
+                                    create_date datetime,
+                                    price REAL NOT NULL);'''
+
+        im.execute(tablo_olustur)
+        vt.commit()
+        print("Tablo oluşturuldu veya tablo ile bağlantı kuruldu ")
+
+
+        insert_sorgu = """INSERT INTO Urunler
+                          (id, name, tag, create_date, price)
+                          VALUES (?, ?, ?, ?, ?);"""
+
+        im.executemany(insert_sorgu, data_list)
+        vt.commit()
+        print("Toplam", im.rowcount, "EDUCATE Urunler tablosuna başarıyla kaydedildi")
+        im.close()
+
+
+    except sqlite3.Error as error:
+        print("tablo_olustur sırasıda hata oluştu", error)
+        print("Urunler tablosuna birden fazla kayıt eklenemedi", error)
+    finally:
+        if vt:
+            vt.close()
+            print("vt kapatıldı")
+
+data_list = [(21, 'faber kalem', 'faber', '2022-11-21', 123),
+                (22, 'nike ayakkabı', 'nike', '2022-11-22',786),
+                (23, 'polo gömlek', 'polo', '2022-11-23', 852)]
+
+inserts(data_list)
+
+#-------------------------------------------------------------------------------------------
+import sqlite3
+
+def selects(id):
+    try:
+        vt = sqlite3.connect('Z2.db')
+        im = vt.cursor()
+        print("vt ile bağlantı kuruldu ve im'leç (cursor) oluşturuldu")
+
+        select_sorgu = """select * from Urunler where id = ?"""
+        im.execute(select_sorgu, (id,))
+        data = im.fetchall() #seçilen veriler veri tabanında fetchall ile alınıp EDUCATE adlı değişkene atandı
+        print("Printing ID ", id)
+        for satir in data:
+            print("name = ",         satir[1]) #EDUCATE değişkenin selects(22) satırın 1. kolonu
+            print("tag  = ",         satir[2]) #EDUCATE değişkenin selects(22) satırın 2. kolonu
+            print("create_date  = ", satir[3]) #EDUCATE değişkenin selects(22) satırın 3. kolonu
+            print("price  = ",       satir[4]) #EDUCATE değişkenin selects(22) satırın 4. kolonu
+        im.close()
+
+    except sqlite3.Error as error:
+        print("Tablodan EDUCATE okunamadı", error)
+    finally:
+        if vt:
+            vt.close()
+            print("vt kapatıldı")
+
+selects(22)
+
+#-------------------------------------------------------------------------------------------
+
+def updates(data_list):
+    try:
+        vt = sqlite3.connect('Z2.db')
+        im = vt.cursor()
+        print("vt ile bağlantı kuruldu ve im'leç (cursor) oluşturuldu")
+
+        update_sorgu= """Update Urunler set price = ? where id = ?"""
+        im.executemany(update_sorgu, data_list)
+        vt.commit()
+        print("Toplam", im.rowcount, "kayıt başarıyla güncellendi")
+        vt.commit()
+        im.close()
+
+    except sqlite3.Error as error:
+        print("tabloda birden çok kayıt güncellenemedi", error)
+    finally:
+        if vt:
+            vt.close()
+            print("vt kapatıldı")
+
+data_list = [(128, 21), (785, 22), (458, 23)]
+updates(data_list)
+
+#-------------------------------------------------------------------------------------------
+
+class Product():
+    product = []
+    def __init__(self, id, code, name, tag, create_date, price):
+        self.id = id
+        self.code = code
+        self.isim = name
+        self.tag = tag
+        self.create_date = create_date
+        self.price = price
+
+
+def select():
+    import sqlite3
+    with sqlite3.connect('Z2.db') as vt:
+        im = vt.cursor()
+        print("vt ile bağlantı kuruldu ve im'leç (cursor) oluşturuldu")
+
+        im.execute('''CREATE TABLE IF NOT EXISTS Products (
+                                                            id INTEGER PRIMARY KEY,
+                                                            code INTEGER NOT NULL UNIQUE,
+                                                            name TEXT NOT NULL,
+                                                            tag TEXT NOT NULL UNIQUE,
+                                                            create_date datetime,
+                                                            price REAL NOT NULL);''')
+        vt.commit()
+        print("Tablo oluşturuldu veya tablo ile bağlantı kuruldu ")
+
+    while True:
+        try:
+            im.execute("""SELECT * FROM Products""")
+            product = im.fetchall()
+            code = int(input('***-----kontrol etmek istediğiniz ürün barkodu girin-----*** \n'))
+            code = int(code)
+            for p in product:
+                while code == p[1]:  # kontrol için int değeri str ye dönüştürüldü.
+                    print("***----bu barkod sistemde kayıtlı-----------***")
+                    print("id:",            (p[0]))
+                    print("barkod:",        (p[1]))
+                    print("name:",          (p[2]))
+                    print("tag:",           (p[3]))
+                    print("create_time:",   (p[4]))
+                    print("price:",         (p[5]))
+
+                    code = int(input('(2)  ürün barkod girin \n'))
+            print("***-----bu barkod ile yeni ürün kaydı yapılabilir-----------***")
+            return code
+
+        except ValueError:
+            print("***barkod sayılardan oluşmalı ve boş bırakılmamalıdır***")
+select()
+
+
+def insert():
+    import sqlite3
+    with sqlite3.connect('Z2.db') as vt:
+        im = vt.cursor()
+        print("vt ile bağlantı kuruldu ve im'leç (cursor) oluşturuldu")
+
+        im.execute('''CREATE TABLE IF NOT EXISTS Products (
+                                                                id INTEGER PRIMARY KEY,
+                                                                code INTEGER NOT NULL UNIQUE,
+                                                                name TEXT NOT NULL,
+                                                                tag TEXT NOT NULL UNIQUE,
+                                                                create_date datetime,
+                                                                price REAL NOT NULL);''')
+        vt.commit()
+        print("Tablo oluşturuldu veya tablo ile bağlantı kuruldu ")
+
+        im.execute("""SELECT * FROM Products""")
+        product = im.fetchall()
+        print(product)
+        id = 2000
+        for id, value in enumerate(product, start=2001):
+            pass
+        insert_sorgu = """INSERT INTO Products
+                              (id, code, name, tag, create_date, price)
+                              VALUES (?, ?, ?, ?, ?, ?);"""
+
+        from time import strftime # (%x)tam tarih bilgisi (%c)tam tarih, saat ve zaman bilgisi vd.
+
+        data = [(id, int(input(" ürün barkodu girin \n")), input("Ürün adı girin \n"), input("Ürün kategori/tag girin \n"), strftime('%x'), int(input("fiyat girin \n")))]
+
+        im.executemany(insert_sorgu, data)
+
+        vt.commit()
+        print("Toplam", im.rowcount, "EDUCATE Urunler tablosuna başarıyla kaydedildi")
+
+insert()
+
+
+def update():
+    import sqlite3
+    with sqlite3.connect('Z2.db') as vt:
+        im = vt.cursor()
+        print("update vt ve im ")
+
+        im.execute('''CREATE TABLE IF NOT EXISTS Products (
+                                                                           id INTEGER PRIMARY KEY,
+                                                                           code INTEGER NOT NULL UNIQUE,
+                                                                           name TEXT NOT NULL,
+                                                                           tag TEXT NOT NULL UNIQUE,
+                                                                           create_date datetime,
+                                                                           price REAL NOT NULL);''')
+        vt.commit()
+        print("update Tablo oluşturuldu veya tablo ile bağlantı kuruldu ")
+
+        im.execute("""SELECT * FROM Products""")
+        product = im.fetchall()
+        code = int(input('***-----güncellemek istediğiniz ürün barkodu girin-----*** \n'))
+        code = int(code)
+        for p in product:
+            if code == p[1]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("id:", (p[0]))
+                print("code:", (p[1]))
+                print("name:", (p[2]))
+                print("tag:", (p[3]))
+                print("create_time:", (p[4]))
+                print("price:", (p[5]))
+
+        update_query = """Update Products set price = ?, name = ? where code = ?"""
+        new_data = [(int(input("yeni fiyat girin \n")),(input("yeni isim girin \n")), code)]
+        #new_data = [(input("(yeni ürün adı girin) \n"), input("yeni kategori/tag girin \n"), int(input("yeni fiyat girin \n")))]
+        im.executemany(update_query, new_data)
+        vt.commit()
+        print("Toplam", im.rowcount, "kayıt başarıyla güncellendi")
+        im.execute("""SELECT * FROM Products""")
+        product = im.fetchall()
+        for p in product:
+            if code == p[1]:  # kontrol için int değeri str ye dönüştürüldü.
+              print("new price:", (p[5]))
+              print("new name:", (p[2]))
+
+        vt.commit()
+update()
+
+
+def delete():
+    import sqlite3
+    with sqlite3.connect('Z2.db') as vt:
+        im = vt.cursor()
+        print("update vt ve im ")
+        im.execute("""SELECT * FROM Products""")
+        product = im.fetchall()
+        code = int(input('***-----silmek istediğiniz ürün barkodu girin-----*** \n'))
+        code = int(code)
+        for p in product:
+            if code == p[1]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("id:", (p[0]))
+                print("code:", (p[1]))
+                print("name:", (p[2]))
+                print("tag:", (p[3]))
+                print("create_time:", (p[4]))
+                print("price:", (p[5]))
+
+        while True:
+            delete = input('ürünü silme işlemine devam edilsin mi? evet/hayır \n')
+            if not delete:
+                print("** ürün adı boş bırakılmamalıdır **")
+                continue
+            elif delete == 'evet':
+                print(f'{delete} silme işlemi onaylandı')
+                break
+
+
+    delete_query = """DELETE from Products where code = ?"""
+    new_data = [(code,)]
+
+    im.executemany(delete_query, new_data)
+
+    print("Toplam", im.rowcount, "kayıt başarıyla silindi")
+
+    vt.commit()
+
+delete()
+---------------------------------------------------------------------
+class UserDelete():
+
+    def __init__(self, id='', ad='', soyad='', yonetici=0, diyetisyen=0, sekreter=0):
+        self.id = id
+        self.ad = ad
+        self.soyad = soyad
+        self.yonetici = yonetici
+        self.diyetisyen = diyetisyen
+        self.sekreter = sekreter
+
+    @classmethod
+    def user_delete(cls, id=None):
+        cls.id = id
+        import sqlite3
+
+        with sqlite3.connect('Meets.db') as vt:
+            im = vt.cursor()
+            # print("Kullanici tablosu için vt ile bağlantı kuruldu ve im'leç (cursor) oluşturuldu")
+
+            im.execute('''CREATE TABLE IF NOT EXISTS Kullanici (
+                                                                                        id INTEGER PRIMARY KEY,
+                                                                                        ad TEXT NOT NULL,
+                                                                                        soyad TEXT NOT NULL,
+                                                                                        yonetici TEXT NOT NULL,
+                                                                                        diyetisyen TEXT NOT NULL,
+                                                                                        sekreter TEXT NOT NULL);''')
+            vt.commit()
+            # print("Kullanici tablosu oluşturuldu veya Kullanici tablosu ile bağlantı kuruldu ")
+
+            delete_query = """DELETE from Kullanici where id = ?"""
+            new_data = [(id,)]
+            im.executemany(delete_query, new_data)
+            vt.commit()
+            print("Toplam", im.rowcount, "kayıt başarıyla silindi")
+
+            vt.commit()
+
+class UsersInsert():
+
+
+    def __init__(self, id='', ad='', soyad='', yonetici=0, diyetisyen=0, sekreter=0):
+        self.id = id
+        self.ad = ad
+        self.soyad = soyad
+        self.yonetici = yonetici
+        self.diyetisyen = diyetisyen
+        self.sekreter = sekreter
+        self.user_insert()
+
+
+    def user_insert(self):
+        import sqlite3
+
+        with sqlite3.connect('Meets.db') as vt:
+            im = vt.cursor()
+            #print("Kullanici tablosu için vt ile bağlantı kuruldu ve im'leç (cursor) oluşturuldu")
+
+            im.execute('''CREATE TABLE IF NOT EXISTS Kullanici (
+                                                                            id INTEGER PRIMARY KEY,
+                                                                            ad TEXT NOT NULL,
+                                                                            soyad TEXT NOT NULL,
+                                                                            yonetici TEXT NOT NULL,
+                                                                            diyetisyen TEXT NOT NULL,
+                                                                            sekreter TEXT NOT NULL);''')
+            vt.commit()
+            #print("Kullanici tablosu oluşturuldu veya Kullanici tablosu ile bağlantı kuruldu ")
+
+            im.execute("""SELECT * FROM Kullanici""")
+            user = im.fetchall()
+
+            self.id = 1000
+            for self.id, value in enumerate(user, start=1001):
+                # print("{}".format(id))
+                # print(int(product[-1][0]))
+                pass
+
+            insert_sorgu = """INSERT INTO Kullanici
+                                      (id, ad, soyad, yonetici, diyetisyen, sekreter)
+                                      VALUES (?, ?, ?, ?, ?, ?);"""
+
+            data = [(self.id, self.ad, self.soyad, self.yonetici, self.diyetisyen, self.sekreter)]
+
+            im.executemany(insert_sorgu, data)
+
+            vt.commit()
+            print("Kullanici tablosuna", im.rowcount, "kayıt başarıyla kaydedildi")
+
+
+#çağırılacak ana program
+
+#from userinsert import *
+#i0 = id
+#i1 = "ad girin"
+#i2 = "soyad girin"
+
+#UserInsert(id, i1, i2, 0, 0, 0)
+
+
+class UserSelect():
+
+    def __init__(self, id='', ad='', soyad='', yonetici=0, diyetisyen=0, sekreter=0):
+        self.id = id
+        self.ad = ad
+        self.soyad = soyad
+        self.yonetici = yonetici
+        self.diyetisyen = diyetisyen
+        self.sekreter = sekreter
+
+
+    @classmethod
+    def id_select(cls,id=None):
+        cls.id=id
+        import sqlite3
+
+        with sqlite3.connect('Meets.db') as vt:
+            im = vt.cursor()
+            #print("Kullanici tablosu için vt ile bağlantı kuruldu ve im'leç (cursor) oluşturuldu")
+
+            im.execute('''CREATE TABLE IF NOT EXISTS Kullanici (
+                                                                                        id INTEGER PRIMARY KEY,
+                                                                                        ad TEXT NOT NULL,
+                                                                                        soyad TEXT NOT NULL,
+                                                                                        yonetici TEXT NOT NULL,
+                                                                                        diyetisyen TEXT NOT NULL,
+                                                                                        sekreter TEXT NOT NULL);''')
+            vt.commit()
+            #print("Kullanici tablosu oluşturuldu veya Kullanici tablosu ile bağlantı kuruldu ")
+
+            im.execute("""SELECT * FROM Kullanici""")
+            users = im.fetchall()
+
+            for p in users:
+                if id == p[0]:  # kontrol için int değeri str ye dönüştürüldü.
+                    print("id:", (p[0]))
+                    print("ad:", (p[1]))
+                    print("soyad:", (p[2]))
+                    # print("yonetici:", (p[3]))
+                    # print("diyetisyen:", (p[4]))
+                    # print("sekreter :", (p[5]))
+                    return p[0]
+
+    @classmethod
+    def ad_select(cls, ad=None):
+        cls.ad=ad
+        import sqlite3
+
+        with sqlite3.connect('Meets.db') as vt:
+            im = vt.cursor()
+            # print("Kullanici tablosu için vt ile bağlantı kuruldu ve im'leç (cursor) oluşturuldu")
+
+            im.execute('''CREATE TABLE IF NOT EXISTS Kullanici (
+                                                                                            id INTEGER PRIMARY KEY,
+                                                                                            ad TEXT NOT NULL,
+                                                                                            soyad TEXT NOT NULL,
+                                                                                            yonetici TEXT NOT NULL,
+                                                                                            diyetisyen TEXT NOT NULL,
+                                                                                            sekreter TEXT NOT NULL);''')
+            vt.commit()
+            # print("Kullanici tablosu oluşturuldu veya Kullanici tablosu ile bağlantı kuruldu ")
+
+            im.execute("""SELECT * FROM Kullanici""")
+            users = im.fetchall()
+
+            for p in users:
+                if ad == p[1]:  # kontrol için int değeri str ye dönüştürüldü.
+                    print("id:", (p[0]))
+                    print("ad:", (p[1]))
+                    print("soyad:", (p[2]))
+                    # print("yonetici:", (p[3]))
+                    # print("diyetisyen:", (p[4]))
+                    # print("sekreter :", (p[5]))
+#-----------------------------------------------------------------------------------------------------------------------
+class UserUpdate():
+
+    def __init__(self, id='', ad='', soyad='', yonetici=0, diyetisyen=0, sekreter=0):
+        self.id = id
+        self.ad = ad
+        self.soyad = soyad
+        self.yonetici = yonetici
+        self.diyetisyen = diyetisyen
+        self.sekreter = sekreter
+
+    @classmethod
+    def ad_update(cls,id=None,ad=None):
+        cls.ad=ad
+        import sqlite3
+
+        with sqlite3.connect('Meets.db') as vt:
+            im = vt.cursor()
+            #print("Kullanici tablosu için vt ile bağlantı kuruldu ve im'leç (cursor) oluşturuldu")
+
+            im.execute('''CREATE TABLE IF NOT EXISTS Kullanici (
+                                                                                    id INTEGER PRIMARY KEY,
+                                                                                    ad TEXT NOT NULL,
+                                                                                    soyad TEXT NOT NULL,
+                                                                                    yonetici TEXT NOT NULL,
+                                                                                    diyetisyen TEXT NOT NULL,
+                                                                                    sekreter TEXT NOT NULL);''')
+            vt.commit()
+            #print("Kullanici tablosu oluşturuldu veya Kullanici tablosu ile bağlantı kuruldu ")
+
+            update_query = """Update Kullanici set ad = ? where id = ?"""
+            new_data = [(ad,id)]
+            im.executemany(update_query, new_data)
+            vt.commit()
+            print("Toplam", im.rowcount, "kayıt başarıyla güncellendi")
+
+
+
+            im.execute("""SELECT * FROM Kullanici""")
+            users = im.fetchall()
+            for p in users:
+                if id == p[0]:  # kontrol için int değeri str ye dönüştürüldü.
+                    print("id:", (p[0]))
+                    print("ad:", (p[1]))
+                    print("soyad:", (p[2]))
+                    # print("yonetici:", (p[3]))
+                    # print("diyetisyen:", (p[4]))
+                    # print("sekreter :", (p[5]))
+
+            vt.commit()
+
+    @classmethod
+    def soyad_update(cls,id=None,soyad=None):
+        cls.soyad=soyad
+        import sqlite3
+
+        with sqlite3.connect('Meets.db') as vt:
+            im = vt.cursor()
+            #print("Kullanici tablosu için vt ile bağlantı kuruldu ve im'leç (cursor) oluşturuldu")
+
+            im.execute('''CREATE TABLE IF NOT EXISTS Kullanici (
+                                                                                    id INTEGER PRIMARY KEY,
+                                                                                    ad TEXT NOT NULL,
+                                                                                    soyad TEXT NOT NULL,
+                                                                                    yonetici TEXT NOT NULL,
+                                                                                    diyetisyen TEXT NOT NULL,
+                                                                                    sekreter TEXT NOT NULL);''')
+            vt.commit()
+            #print("Kullanici tablosu oluşturuldu veya Kullanici tablosu ile bağlantı kuruldu ")
+
+            update_query = """Update Kullanici set soyad = ? where id = ?"""
+            new_data = [(soyad,id)]
+            im.executemany(update_query, new_data)
+            vt.commit()
+            print("Toplam", im.rowcount, "kayıt başarıyla güncellendi")
+
+
+            im.execute("""SELECT * FROM Kullanici""")
+            users = im.fetchall()
+            for p in users:
+                if id == p[0]:  # kontrol için int değeri str ye dönüştürüldü.
+                    print("id:", (p[0]))
+                    print("ad:", (p[1]))
+                    print("soyad:", (p[2]))
+                    # print("yonetici:", (p[3]))
+                    # print("diyetisyen:", (p[4]))
+                    # print("sekreter :", (p[5]))
+
+
+            vt.commit()
+
+#------------------------------------------------------------------------------------
+
+class UserQuery():
+    users = []
+    luser = []
+    im = None
+    vt = None
+
+    def __init__(self, id=None, tc=None, ad=None, soyad=None, yonetici=None, diyetisyen=None, sekreter=None):
+        self.id = id
+        self.tc = tc
+        self.ad = ad
+        self.soyad = soyad
+        self.yonetici = yonetici
+        self.diyetisyen = diyetisyen
+        self.sekreter = sekreter
+
+    @classmethod
+    def users_connect(cls):
+        cls.users=[]
+
+        import sqlite3
+        with sqlite3.connect('cons.db') as cls.vt:
+            cls.im = cls.vt.cursor()
+            # print("Kullanici tablosu için vt ile bağlantı kuruldu ve im'leç (cursor) oluşturuldu")
+
+            cls.im.execute('''CREATE TABLE IF NOT EXISTS Kullanici (
+                                                                    id INTEGER PRIMARY KEY,
+                                                                    tc INTEGER NOT NULL UNIQUE,
+                                                                    ad TEXT NOT NULL,
+                                                                    soyad TEXT NOT NULL,
+                                                                    yonetici BOOLEAN NOT NULL,
+                                                                    diyetisyen BOOLEAN NOT NULL,
+                                                                    sekreter BOOLEAN NOT NULL);''')
+            cls.vt.commit()
+            print("Kullanici tablosu oluşturuldu veya Kullanici tablosu ile bağlantı kuruldu ")
+
+    @classmethod
+    def users_select_all(cls):
+        cls.users_connect()
+
+        cls.im.execute("""SELECT * FROM Kullanici """)
+        cls.users = cls.im.fetchall()
+        print("tüm Kullanıcı listesi: ", cls.users)
+
+    @classmethod
+    def users_select_last(cls):
+        cls.users_connect()
+
+        cls.im.execute("""SELECT * FROM Kullanici ORDER BY id DESC LIMIT 1""")
+        cls.luser = cls.im.fetchall()
+        print("son kullanıcı ", cls.luser)
+
+    @classmethod
+    def users_id(cls,id=None):
+        cls.users_select_last()
+
+        #print("son kullanıcı ", cls.luser)
+        if cls.luser == []:
+            id = 1000
+            print(id)
+            return id
+
+        else:
+            for p in cls.luser:
+                print("son kullanıcı id :", p[0] + 1)
+                pass
+                id = p[0] + 1
+            for id, value in enumerate(cls.luser, start=id):
+                print(id)
+                return id
+
+    @classmethod
+    def users_inserts(cls, tc=None, ad=None, soyad=None, yonetici=None, diyetisyen=None, sekreter=None):
+
+        id = UserQuery.users_id()
+
+        inserts_query = """INSERT INTO Kullanici
+                            (id, tc, ad, soyad, yonetici, diyetisyen, sekreter)
+                            VALUES (?, ?, ?, ?, ?, ?, ?);"""
+
+        new_data = [(id, tc, ad, soyad, yonetici, diyetisyen, sekreter)]
+
+        cls.im.executemany(inserts_query, new_data)
+
+        cls.vt.commit()
+        print("Kullanici tablosuna", cls.im.rowcount, "kayıt başarıyla kaydedildi")
+
+    @classmethod
+    def users_delete(cls,tc=None):
+        cls.users_connect()
+        cls.tc=tc
+        delete_query = """DELETE from Kullanici where tc = ?"""
+        new_data = [(tc,)]
+        cls.im.executemany(delete_query, new_data)
+        cls.vt.commit()
+        print("Toplam", cls.im.rowcount, "kayıt başarıyla silindi")
+        print(f' silinen tc : "{tc}"  ')
+        cls.vt.commit()
+
+    @classmethod
+    def users_update_ad(cls,tc=None, ad=None):
+        cls.users_connect()
+
+        update_query = """Update Kullanici set ad = ? where tc = ?"""
+        new_data = [(ad,tc)]
+        cls.im.executemany(update_query, new_data)
+        cls.vt.commit()
+        print("Toplam", cls.im.rowcount, "kayıt başarıyla güncellendi")
+        print(f' tc : "{tc}"  kulanıcısının adı "{ad}" olarak güncellendi')
+
+    @classmethod
+    def users_update_soyad(cls,tc=None, soyad=None):
+        cls.users_connect()
+
+        update_query = """Update Kullanici set soyad = ? where tc = ?"""
+        new_data = [(soyad,tc)]
+        cls.im.executemany(update_query, new_data)
+        cls.vt.commit()
+        print("Toplam", cls.im.rowcount, "kayıt başarıyla güncellendi")
+        print(f' tc : "{tc}"  kulanıcısının adı "{soyad}" olarak güncellendi')
+
+    @classmethod
+    def users_param_d(cls, id=None, tc=None, ad=None, soyad=None, yonetici=None, diyetisyen=None, sekreter=None):
+        cls.users_select_all()
+
+        for p in cls.users:
+            if id == p[0]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("--sorgulanan id:", (p[0]))
+                print("tc:", (p[1]))
+                print("ad:", (p[2]))
+                print("soyad:", (p[3]))
+                print("yonetici:", (p[3]))
+                print("diyetisyen:", (p[4]))
+                print("sekreter :", (p[5]))
+                return p[0]
+            elif tc == p[1]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("id:", (p[0]))
+                print("--sorgulanan tc:", (p[1]))
+                print("ad:", (p[2]))
+                print("soyad:", (p[3]))
+                print("yonetici:", (p[4]))
+                print("diyetisyen:", (p[5]))
+                print("sekreter :", (p[6]))
+                return p[1]
+            elif ad == p[2]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("id:", (p[0]))
+                print("tc:", (p[1]))
+                print("--sorgulanan ad:", (p[2]))
+                print("soyad:", (p[3]))
+                print("yonetici:", (p[4]))
+                print("diyetisyen:", (p[5]))
+                print("sekreter :", (p[6]))
+                return p[2]
+            elif soyad == p[3]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("id:", (p[0]))
+                print("tc:", (p[1]))
+                print("ad:", (p[2]))
+                print("--sorgulanan soyad:", (p[3]))
+                print("yonetici:", (p[4]))
+                print("diyetisyen:", (p[5]))
+                print("sekreter :", (p[6]))
+                return p[3]
+            elif yonetici == p[4]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("yonetici:", (p[4]))
+                return p[4]
+            elif diyetisyen == p[5]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("diyetisyen:", (p[5]))
+                return p[5]
+            elif sekreter == p[6]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("sekreter:", (p[6]))
+                return p[6]
+
+    @classmethod
+    def users_param(cls, id=None, tc=None, ad=None, soyad=None, yonetici=None, diyetisyen=None, sekreter=None):
+        cls.users_select_all()
+
+        for p in cls.users:
+            if id == p[0]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("id :",p[0])
+                return p[0]
+            elif tc == p[1]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("tc :",p[1])
+                return p[1]
+            elif ad == p[2]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("ad :",p[2])
+                return p[2]
+            elif soyad == p[3]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("soyad :", p[3])
+                return p[3]
+            elif yonetici == p[4]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("yonetici :", p[4])
+                return p[4]
+            elif diyetisyen == p[5]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("diyetisyen :", p[5])
+                return p[5]
+            elif sekreter == p[6]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("sekreter :", p[6])
+                return p[6]
+
+
+
+#UserQuery.users_select_last()
+#UserQuery.users_id()
+#UserQuery.users_inserts(46, 'Mesut', 'Demir', 0, 0, 0)
+
+#UserQuery.users_param(1000,'','','','','')
+
+#UserQuery.users_param_d('','','','',1,'')
+
+#UserQuery.users_update_ad(int(input("değişiklik yapılacak kullanıcı tc girin \n")),input("yeni ad girin \n"))
+
+#UserQuery.users_update_soyad(int(input("değişiklik yapılacak kullanıcı tc girin \n")),input("yeni soyad girin \n"))
+
+#UserQuery.users_delete(int(input("silinecek kullanıcı tc girin \n")))
+
+
+
+#--------------------------------------------------------------------------------
+
+
+from userquery import *
+class UserFunc():
+
+    def __init__(self, id=None, tc=None, ad=None, soyad=None, yonetici=None, diyetisyen=None, sekreter=None):
+        super().__init__(id, tc, ad, soyad, yonetici, diyetisyen, sekreter)
+        self.id = id
+        self.tc = tc
+        self.ad = ad
+        self.soyad = soyad
+        self.yonetici = yonetici
+        self.diyetisyen = diyetisyen
+        self.sekreter = sekreter
+
+
+    @classmethod
+    def users_tc(cls):
+        while True:
+            tck = input("tc girin : ")
+            if not tck:
+                print("tc boş bırakılamaz")
+                continue
+            elif tck.isalpha() == True:
+                print("tc sayilardan oluşmalı")
+                continue
+            elif int(len(tck)) < 1 or int(len(tck)) > 3:
+                print("tc 2 sayıdan oluşmalı.")
+                continue
+            elif tck.isnumeric() == True:
+                print("kontrol başarılı")
+                tc = int(tck)
+                if tc == UserQuery.users_param(None,tc,None,None,None,None,None):
+                    #print("girilen", tc)
+                    #print("gelen", UserQuery.users_param(None,tc,None,None,None,None,None))
+                    print("girmiş olduğunuz tc sistemde kayıtlı")
+                    continue
+                else:
+                    print("tc", tc, "sistem kaydı yapılabilir")
+                    return tc
+
+    @classmethod
+    def users_save(cls):
+        while True:
+            tc = cls.users_tc()
+            print(tc)
+            if tc==int(tc):
+                UserQuery.users_inserts(None,tc,input("isim girin: \n"),input("soyad girin: \n"), 0, 0, 0)
+                new_user = input("yeni kullanıcı girmek için 'yes', çıkış için 'no' yazın \n")
+                if new_user == 'yes':
+                    cls.users_tc()
+                    #print(tc)
+                    continue
+                elif not new_user:
+                    print("tc boş bırakılamaz")
+                    continue
+                elif new_user =='no':
+                    print("yine bekleriz")
+                    break
+            else:
+                print("yeni tc: ", tc,"başarılı")
+            break
+
+#UserFunc.users_tc()
+#UserFunc.users_save()
+#-------------------------------------------------------------------------------------
+
+from userquery import *
+class PacksQuery(UserQuery):
+    users = []
+    packs = []
+    lpack = []
+    im = None
+    vt = None
+
+    def __init__(self, id=None, ad=None, diyetisyen_id=None, fiyat=None, gorusmeSayisi=None):
+        super().__init__(id)
+        self.id=id
+        self.ad=ad
+        self.diyetisyen_id = diyetisyen_id
+        self.fiyat = fiyat
+        self.gorusmeSayisi = gorusmeSayisi
+
+    @classmethod
+    def packs_connect(cls):
+        cls.packs=[]
+
+        import sqlite3
+        with sqlite3.connect('cons.db') as cls.vt:
+            cls.im = cls.vt.cursor()
+
+            #print("Paket tablosu için vt ile bağlantı kuruldu ve im'leç (cursor) oluşturuldu")
+
+            cls.im.execute('''CREATE TABLE IF NOT EXISTS Paket (
+                                                                    id INTEGER PRIMARY KEY,
+                                                                    ad TEXT NOT NULL ,
+                                                                    diyetisyen_id INTEGER NOT NULL,
+                                                                    fiyat REAL NOT NULL,
+                                                                    gorusmeSayisi REAL NOT NULL,
+
+                                                                    FOREIGN KEY (diyetisyen_id) REFERENCES Kullanici(id)
+                                                                    );''')
+            cls.vt.commit()
+            #print("Paket tablosu oluşturuldu veya Paket tablosu ile bağlantı kuruldu ")
+
+    @classmethod
+    def packs_select_all(cls):
+        cls.packs_connect()
+
+        cls.im.execute("""SELECT * FROM Paket """)
+        cls.packs = cls.im.fetchall()
+        #print("tüm Paket listesi: ", cls.packs)
+
+    @classmethod
+    def packs_select_last(cls):
+        cls.packs_connect()
+
+        cls.im.execute("""SELECT * FROM Paket ORDER BY id DESC LIMIT 1""")
+        cls.lpack = cls.im.fetchall()
+        #print("son Paket ", cls.lpack)
+
+    @classmethod
+    def packs_id(cls,id=None):
+        cls.packs_select_last()
+        #print("son Paket ", self.lpack)
+
+        #print("son kullanıcı ", cls.luser)
+        if cls.lpack == []:
+            id = 2000
+            print(id)
+            return id
+
+        else:
+            for p in cls.lpack:
+                #print("son Paket id :", p[0] + 1)
+                pass
+                id = p[0] + 1
+            for id, value in enumerate(cls.lpack, start=id):
+                print(id)
+                return id
+
+    @classmethod
+    def users_select_diyetisyen(cls):
+        cls.users_connect()
+
+        cls.im.execute("""SELECT * FROM Kullanici where diyetisyen = 1 """)
+        cls.users = cls.im.fetchall()
+        print("tüm diyetisyen listesi: ", cls.users)
+
+    @classmethod
+    def diyetisyen_tc_id(cls):
+        cls.users_select_diyetisyen()
+        cls.id=id
+        tc = int(input("diyetisyen tc girin \n"))
+        for p in cls.users:
+            if tc == p[1]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("tc :",p[1],"için döndürülen id:",p[0])
+                return p[0]
+
+    @classmethod
+    def packs_inserts(cls, ad=None, fiyat=None, gorusmeSayisi=None):
+
+        id = PacksQuery.packs_id()
+        diyetisyen_id = PacksQuery.diyetisyen_tc_id()
+
+
+        inserts_query = """INSERT INTO Paket
+                            (id, ad, diyetisyen_id, fiyat, gorusmeSayisi)
+                            VALUES (?, ?, ?, ?, ?);"""
+
+        new_data = [(id, ad, diyetisyen_id, fiyat, gorusmeSayisi)]
+
+        cls.im.executemany(inserts_query, new_data)
+
+        cls.vt.commit()
+        print("Paket tablosuna", cls.im.rowcount, "kayıt başarıyla kaydedildi")
+
+    @classmethod
+    def packs_delete(cls,id=None):
+        cls.packs_select_all()
+        cls.id=id
+        delete_query = """DELETE from Paket where id = ?"""
+        new_data = [(id,)]
+        cls.im.executemany(delete_query, new_data)
+        cls.vt.commit()
+        print("Toplam", cls.im.rowcount, "kayıt başarıyla silindi")
+        print(f' silinen id : "{id}"  ')
+        cls.vt.commit()
+
+    @classmethod
+    def packs_update_ad(cls,id=None, ad=None):
+
+        cls.packs_connect()
+        update_query = """Update Paket set ad = ? where id = ?"""
+        new_data = [(ad,id)]
+        cls.im.executemany(update_query, new_data)
+        cls.vt.commit()
+        print("Toplam", cls.im.rowcount, "kayıt başarıyla güncellendi")
+        print(f' id : "{id}"  paket adı "{ad}" olarak güncellendi')
+
+    @classmethod
+    def packs_param(cls, id=None, ad=None, diyetisyen_id=None, fiyat=None, gorusmeSayisi=None):
+        cls.packs_select_all()
+        #print("tüm Paket listesi: ", cls.packs)
+        for p in cls.packs:
+            #print(p)
+            if id == p[0]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("id:", (p[0]))
+                return p[0]
+            elif ad == p[1]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("ad:", (p[1]))
+                return p[1]
+            elif diyetisyen_id == p[2]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("diyetisyen:", (p[2]))
+                return p[2]
+            elif fiyat == p[3]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("fiyat:", (p[3]))
+                return p[3]
+            elif gorusmeSayisi == p[4]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("gorusmeSayisi :", (p[4]))
+                return p[4]
+
+    @classmethod
+    def diyetisyen_param(cls, id=None, tc=None, ad=None, soyad=None):
+        cls.users_select_diyetisyen()
+
+        for p in cls.users:
+            if id == p[0]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("id :",p[0])
+                return p[0]
+            elif tc == p[1]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("tc :",p[1])
+                return p[1]
+            elif ad == p[2]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("ad :",p[2])
+                return p[2]
+            elif soyad == p[3]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("soyad :", p[3])
+                return p[3]
+
+#PacksQuery.packs_select_last()
+
+#PacksQuery.packs_id()
+
+#PacksQuery.users_select_diyetisyen()
+#PacksQuery.diyetisyen_tc_id()
+
+#PacksQuery.packs_inserts(input("paket ismi girin \n"),int(input("paket fiyatı girin \n")),1)
+
+#PacksQuery.packs_delete(int(input("silinecek Paket id girin \n")))
+
+#PacksQuery.packs_update_ad(int(input("değişiklik yapılacak Paket id girin \n")),input("yeni ad girin \n"))
+
+#PacksQuery.packs_update_soyad(int(input("değişiklik yapılacak Paket tc girin \n")),input("yeni soyad girin \n"))
+
+#PacksQuery.packs_param('', '', 1000, '', '')
+
+#PacksQuery.diyetisyen_param('',55, '', '')
+
+
+
+#----------------------------------------------------------------------------------------------------
+from userquery import *
+class MeetQuery(UserQuery):
+    lmeet = []
+    meets = []
+    im = None
+    vt = None
+
+    def __init__(self, id=None, diyetisyen_id=None,Kullanici_id=None, sekreter_id=None,create_date=None,diyetisyenKatilimi=None,kullaniciKatilimi=None,ortam=None,paket_id=None):
+        super().__init__(id,diyetisyen_id,Kullanici_id,sekreter_id)
+        self.id = id
+        self.diyetisyen_id = diyetisyen_id
+        self.Kullanici_id = Kullanici_id
+        self.sekreter_id = sekreter_id
+        self.create_date=create_date
+        self.diyetisyenKatilimi=diyetisyenKatilimi
+        self.kullaniciKatilimi=kullaniciKatilimi
+        self.ortam = ortam
+        self.paket_id = paket_id
+
+    @classmethod
+    def meets_connect(cls):
+        cls.meets=[]
+
+        import sqlite3
+        with sqlite3.connect('cons.db') as cls.vt:
+            cls.im = cls.vt.cursor()
+            #print("Kullanici tablosu için vt ile bağlantı kuruldu ve im'leç (cursor) oluşturuldu")
+            cls.im.execute('''CREATE TABLE IF NOT EXISTS Gorusme (
+                                                                    id INTEGER PRIMARY KEY,
+                                                                    diyetisyen_id INTEGER NOT NULL,
+                                                                    Kullanici_id INTEGER NOT NULL,
+                                                                    sekreter_id INTEGER NOT NULL,
+                                                                    create_date datetime,
+                                                                    diyetisyenKatilimi BOOLEAN NOT NULL,
+                                                                    kullaniciKatilimi BOOLEAN NOT NULL,
+                                                                    ortam BOOLEAN NOT NULL,
+                                                                    paket_id INTEGER NOT NULL,
+
+                                                                    FOREIGN KEY (diyetisyen_id) REFERENCES Kullanici(id)
+                                                                    FOREIGN KEY (Kullanici_id) REFERENCES Kullanici(id)
+                                                                    FOREIGN KEY (sekreter_id) REFERENCES Kullanici(id)
+                                                                    FOREIGN KEY (paket_id) REFERENCES Paket(id)
+                                                                    );''')
+            cls.vt.commit()
+            #print("Gorusme tablosu oluşturuldu veya Gorusme tablosu ile bağlantı kuruldu ")
+
+    @classmethod
+    def meets_select_all(cls):
+        cls.meets_connect()
+
+        cls.im.execute("""SELECT * FROM Gorusme """)
+        cls.meets = cls.im.fetchall()
+        #print("tüm Paket listesi: ", cls.meets)
+
+    @classmethod
+    def meets_select_last(cls):
+        cls.meets_connect()
+
+        cls.im.execute("""SELECT * FROM Gorusme ORDER BY id DESC LIMIT 1""")
+        cls.lmeet = cls.im.fetchall()
+        print("son Gorusme ", cls.lmeet)
+
+    @classmethod
+    def meets_param(cls, id=None, diyetisyen_id=None, Kullanici_id=None, sekreter_id=None, create_date=None, diyetisyenKatilimi=None, kullaniciKatilimi=None, ortam=None, paket_id=None):
+        cls.meets_select_all()
+        print("tüm Gurusme listesi: ", cls.meets)
+        for p in cls.meets:
+            #print(p)
+            if id == p[0]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("id:", (p[0]))
+                return p[0]
+            elif diyetisyen_id == p[1]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("diyetisyen_id:", (p[1]))
+                return p[1]
+            elif Kullanici_id == p[2]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("Kullanici_id:", (p[2]))
+                return p[2]
+            elif sekreter_id == p[3]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("sekreter_id:", (p[3]))
+                return p[3]
+            elif create_date == p[4]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("create_date :", (p[4]))
+                return p[4]
+            elif diyetisyenKatilimi == p[5]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("diyetisyenKatilimi :", (p[5]))
+                return p[5]
+            elif kullaniciKatilimi == p[6]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("kullaniciKatilimi :", (p[6]))
+                return p[6]
+            elif ortam == p[7]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("ortam :", (p[7]))
+                return p[7]
+            elif paket_id == p[8]:  # kontrol için int değeri str ye dönüştürüldü.
+                print("paket_id :", (p[8]))
+                return p[8]
+
+    @classmethod
+    def meets_select_diyetisyen(cls):
+        cls.users_connect()
+
+        cls.im.execute("""SELECT * FROM Gorusme where diyetisyen_id = 1000 """)
+        cls.users = cls.im.fetchall()
+        print("seçilen diyetisyen Gorusme listesi: ", cls.users)
+
+    @classmethod
+    def meets_save_id(cls,id=None):
+        cls.meets_select_last()
+        #print("son Paket ", self.lmeet)
+
+        #print("son kullanıcı ", cls.luser)
+        if cls.lmeet == []:
+            id = 3000
+            print(id)
+            return id
+
+        else:
+            for p in cls.lmeet:
+                print("son Paket id :", p[0] + 1)
+                pass
+                id = p[0] + 1
+            for id, value in enumerate(cls.lmeet, start=id):
+                print(id)
+                return id
+
+    @classmethod
+    def meets_inserts(cls, diyetisyen_id=None, Kullanici_id=None, sekreter_id=None, create_date=None, diyetisyenKatilimi=None, kullaniciKatilimi=None, ortam=None, paket_id=None):
+
+        id = MeetQuery.meets_save_id()
+
+        inserts_query = """INSERT INTO Gorusme
+                            (id,diyetisyen_id,Kullanici_id,sekreter_id,create_date,diyetisyenKatilimi,kullaniciKatilimi,ortam,paket_id)
+                            VALUES (?, ?, ?, ?, ? ,? ,? ,? ,?);"""
+
+        new_data = [(id,diyetisyen_id,Kullanici_id,sekreter_id,create_date,diyetisyenKatilimi,kullaniciKatilimi,ortam,paket_id)]
+
+        cls.im.executemany(inserts_query, new_data)
+
+        cls.vt.commit()
+        print("Paket tablosuna", cls.im.rowcount, "kayıt başarıyla kaydedildi")
+
+    @classmethod
+    def meets_delete(cls,id=None):
+        cls.meets_select_all()
+        cls.id=id
+        delete_query = """DELETE from Gorusme where id = ?"""
+        new_data = [(id,)]
+        cls.im.executemany(delete_query, new_data)
+        cls.vt.commit()
+        print("Toplam", cls.im.rowcount, "kayıt başarıyla silindi")
+        print(f' silinen id : "{id}"  ')
+        cls.vt.commit()
+
+    @classmethod
+    def meets_update_diyetisyen_id(cls,id=None, diyetisyen_id=None):
+
+        cls.meets_connect()
+        update_query = """Update Gorusme set diyetisyen_id = ? where id = ?"""
+        new_data = [(diyetisyen_id,id)]
+        cls.im.executemany(update_query, new_data)
+        cls.vt.commit()
+        print("Toplam", cls.im.rowcount, "kayıt başarıyla güncellendi")
+        print(f' Gorusme id : "{id}"  diyetisyen_id "{diyetisyen_id}" olarak güncellendi')
+
+#MeetQuery.meets_inserts(1002,1008,'','2023-01-29',1,1,1,2001)
+
+#MeetQuery.meets_select_last()
+
+#MeetQuery.meets_save_id()
+
+#MeetQuery.meets_param('',1000,'','','','','','')
+
+#MeetQuery.meets_select_diyetisyen()
+
+#MeetQuery.meets_delete(int(input("silinecek Gorusme id girin \n")))
+
+#MeetQuery.meets_update_ad(int(input("değişiklik yapılacak Paket id girin \n")),input("yeni ad girin \n"))
+
+#MeetQuery.meets_update_diyetisyen_id(int(input("diyetisyen değişikliği yapılacak Gorusme id girin \n")),input("yeni diyetisyen_id \n"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
