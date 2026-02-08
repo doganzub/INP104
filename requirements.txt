@@ -36,6 +36,9 @@ yellowbrick>=1.5
 # Jupyter widget desteği
 ipywidgets>=8.1.0
 
+# PDF işleme
+pdfplumber>=0.10.0
+
 # ============================================================
 # NOT: Aşağıdaki modüller Python 3.13.4 ile birlikte gelir,
 # ayrıca kurulum GEREKMEZ (Standart Kütüphane):
