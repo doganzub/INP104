@@ -1,162 +1,78 @@
-# Hafta 7: Dosya İşlemleri
+# Hafta 7: Dosya İşlemleri (File Operations)
 
 ## Konu Özeti
 
-Bu hafta Python'da dosya oluşturma, yazma ve okuma işlemleri incelenmektedir. Dosya işlemleri, programların kalıcı veri saklama ihtiyacını karşılar. Python'da dosya işlemleri `open()` fonksiyonu ve `with` bağlam yöneticisi ile gerçekleştirilir.
+Bu hafta Python'da **dosya işlemleri** kapsamlı şekilde işlenmektedir. Dosyalar, verilerin kalıcı olarak saklanmasını ve programlar arası veri paylaşımını sağlar.
 
 ---
 
-## Neden Önemli
+## Neden Önemli?
 
-Programlar çoğunlukla verileri kalıcı olarak saklamak zorundadır. Kullanıcı ayarları, log kayıtları, konfigürasyon dosyaları ve veri dosyaları, dosya işlemleri sayesinde yönetilir. Ayrıca dosya okuma becerisi, mevcut verilerin programa aktarılması için temel bir gerekliliktir.
+- Kullanıcı verilerinin kalıcı olarak saklanması
+- Konfigürasyon dosyalarının okunması
+- Log (günlük) dosyalarının oluşturulması
+- Veri aktarımı ve yedekleme
 
 ---
 
 ## Öğrenme Hedefleri
 
-Bu bölümü tamamladığınızda aşağıdaki becerileri kazanmış olacaksınız:
+Bu dersin sonunda öğrenci:
 
-- Dosya oluşturma ve yazma işlemlerini gerçekleştirebilme
-- Dosya okuma yöntemlerini kullanabilme
-- `with` ifadesi ile güvenli dosya yönetimi yapabilme
-- Farklı dosya modlarını anlama ve kullanabilme
-- Temel hata yönetimi uygulayabilme
+- `open()` fonksiyonu ile dosya açabilecektir
+- Dosya kiplerini (`r`, `w`, `a`) anlayabilecektir
+- `read()`, `readline()`, `readlines()` metotlarını kullanabilecektir
+- `with` ifadesinin avantajlarını kavrayacaktır
+- Dosya hatalarını `try-except` ile yönetebilecektir
+- `seek()` ve `tell()` ile imleç yönetimi yapabilecektir
 
 ---
 
 ## Konu Başlıkları
 
-### 7.1 Dosya Açma Modları
-
-Python'da dosyalar farklı modlarla açılabilir. Her mod belirli bir işlem için kullanılır.
-
-| Mod | Açıklama | Dosya Yoksa |
-|-----|----------|-------------|
-| `"r"` | Okuma (varsayılan) | Hata verir |
-| `"w"` | Yazma (üzerine yazar) | Oluşturur |
-| `"a"` | Ekleme (sona ekler) | Oluşturur |
-| `"x"` | Oluşturma (dosya varsa hata) | Oluşturur |
+### 7.1 Dosya İşlemlerine Giriş
+- Dosya işlemlerinin önemi
+- Temel işlem adımları: Aç → İşle → Kapat
 
 ---
 
-### 7.2 Dosya Yazma
+### 7.2 Dosya Açma Kipleri
 
-**Temel Yazma İşlemi:**
-
-```python
-dosya = open("ornek.txt", "w")         # Dosya yazma modunda açılır
-dosya.write("Merhaba Dünya!\n")        # Metin dosyaya yazılır
-dosya.write("Python öğreniyorum\n")    # İkinci satır yazılır
-dosya.close()                          # Dosya kapatılır (önemli!)
-```
-
-**Birden Fazla Satır Yazma:**
-
-```python
-satirlar = ["Satır 1\n", "Satır 2\n", "Satır 3\n"]  # Yazılacak satırlar
-dosya = open("coklu.txt", "w")         # Dosya açılır
-dosya.writelines(satirlar)             # Tüm satırlar yazılır
-dosya.close()                          # Dosya kapatılır
-```
+| Kip | Açıklama |
+|-----|----------|
+| `"r"` | Okuma (varsayılan) |
+| `"w"` | Yazma (mevcut içeriği siler!) |
+| `"a"` | Ekleme (sona ekler) |
 
 ---
 
 ### 7.3 Dosya Okuma
 
-**Tüm İçeriği Okuma:**
-
-```python
-dosya = open("ornek.txt", "r")         # Dosya okuma modunda açılır
-icerik = dosya.read()                  # Tüm içerik okunur
-print(icerik)                          # İçerik ekrana yazdırılır
-dosya.close()                          # Dosya kapatılır
-```
-
-**Satır Satır Okuma:**
-
-```python
-dosya = open("ornek.txt", "r")         # Dosya açılır
-satir = dosya.readline()               # Tek satır okunur
-print(satir)                           # Satır yazdırılır
-dosya.close()                          # Dosya kapatılır
-```
-
-**Tüm Satırları Liste Olarak Okuma:**
-
-```python
-dosya = open("ornek.txt", "r")         # Dosya açılır
-satirlar = dosya.readlines()           # Tüm satırlar liste olarak alınır
-for satir in satirlar:                 # Her satır işlenir
-    print(satir.strip())               # Satır sonu karakteri temizlenerek yazdırılır
-dosya.close()                          # Dosya kapatılır
-```
+| Metot | Dönen Değer |
+|-------|-------------|
+| `read()` | Karakter dizisi (tümü) |
+| `readline()` | Karakter dizisi (tek satır) |
+| `readlines()` | Liste (tüm satırlar) |
 
 ---
 
-### 7.4 with İfadesi (Önerilen Yöntem)
-
-`with` ifadesi, dosya işlemlerinde en güvenli yöntemdir. Dosya otomatik olarak kapatılır ve hata durumlarında bile kaynaklar temizlenir.
-
-**Yazma İşlemi:**
-
-```python
-with open("notlar.txt", "w") as dosya:  # Dosya with bloğu ile açılır
-    dosya.write("Python öğreniyorum\n") # Metin yazılır
-    dosya.write("Dosya işlemleri\n")    # İkinci satır yazılır
-# Blok bitince dosya otomatik kapatılır
-```
-
-**Okuma İşlemi:**
-
-```python
-with open("notlar.txt", "r") as dosya:  # Dosya okuma modunda açılır
-    icerik = dosya.read()               # Tüm içerik okunur
-    print(icerik)                       # İçerik yazdırılır
-# Dosya otomatik kapatılır
-```
-
-**Ekleme Modu:**
-
-```python
-with open("kisiler.txt", "a") as dosya:  # Dosya ekleme modunda açılır
-    dosya.write("Yeni kullanıcı\n")      # Dosya sonuna eklenir
-# Mevcut içerik korunur, yeni satır eklenir
-```
+### 7.4 with İfadesi
+- Otomatik dosya kapatma
+- Hata durumunda bile güvenli
 
 ---
 
 ### 7.5 Hata Yönetimi
-
-Dosya işlemlerinde `FileNotFoundError` hatası sık karşılaşılan bir durumdur.
-
-```python
-try:                                    # Hata yakalama bloğu başlatılır
-    with open("olmayan_dosya.txt", "r") as dosya:  # Var olmayan dosya açılmaya çalışılır
-        icerik = dosya.read()           # Dosya okunmaya çalışılır
-except FileNotFoundError:               # Dosya bulunamazsa bu blok çalışır
-    print("Dosya bulunamadı!")          # Kullanıcıya bilgi verilir
-```
+- `FileNotFoundError`
+- `PermissionError`
+- `try-except` kullanımı
 
 ---
 
-### 7.6 Pratik Uygulama: Not Defteri
-
-```python
-def not_ekle(dosya_adi, not_metni):    # Not ekleme fonksiyonu tanımlanır
-    with open(dosya_adi, "a") as dosya: # Dosya ekleme modunda açılır
-        dosya.write(not_metni + "\n")   # Not dosyaya eklenir
-
-def notlari_oku(dosya_adi):            # Notları okuma fonksiyonu tanımlanır
-    try:                                # Hata yakalama bloğu
-        with open(dosya_adi, "r") as dosya:  # Dosya okuma modunda açılır
-            return dosya.read()         # İçerik döndürülür
-    except FileNotFoundError:           # Dosya yoksa
-        return "Henüz not yok."         # Bilgi mesajı döndürülür
-
-# Kullanım
-not_ekle("notlarim.txt", "Python öğreniyorum")  # Not eklenir
-print(notlari_oku("notlarim.txt"))      # Notlar ekrana yazdırılır
-```
+### 7.6 Dosya Metot ve Nitelikleri
+- `seek()`, `tell()`
+- `writelines()`
+- `name`, `mode`, `closed`
 
 ---
 
@@ -168,9 +84,13 @@ print(notlari_oku("notlarim.txt"))      # Notlar ekrana yazdırılır
 
 ---
 
-## Alıştırma Soruları
+## Referanslar
 
-1. Kullanıcıdan alınan metinleri bir dosyaya kaydeden program yazınız.
-2. Bir metin dosyasındaki satır sayısını bulan program yazınız.
-3. İki farklı dosyanın içeriğini birleştiren program yazınız.
-4. Dosyadaki belirli bir kelimeyi başka bir kelime ile değiştiren program yazınız.
+- Python Programlama Dili Referans Belgesi (`/docs/yazbel.md`)
+- Dosya İşlemleri bölümü (satır 28600+)
+
+---
+
+## Colab Ortamı
+
+Bu ders Google Colab üzerinde çalışılmaktadır.
