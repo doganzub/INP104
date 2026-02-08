@@ -98,6 +98,42 @@ print(bool(""))  # False (boş string)
 
 ---
 
+## Alıştırma Görevleri
+
+Notebook'un sonunda iki ek kod hücresi bulunmaktadır:
+
+### 🟩 Görevler (Cell 33)
+
+Derste işlenen tüm konuların benzeri alıştırmalar. Öğrenci `???` işaretlerinin yerine doğru kodları yazar.
+
+| Görev | Konu |
+|-------|------|
+| Görev 1 | Değişken tanımlama ve işlem yapma |
+| Görev 2 | Birden fazla değişken tanımlama |
+| Görev 3 | Çoklu değer atama |
+| Görev 4 | Değişken değerlerini takas etme (swap) |
+| Görev 5 | input() fonksiyonu – Temel kullanım |
+| Görev 6 | input() fonksiyonu – String döndürme kontrolü |
+| Görev 7 | input() ile hesaplama yapma |
+| Görev 8 | int() – String'i tam sayıya çevirme |
+| Görev 9 | float() – String'i ondalıklı sayıya çevirme |
+| Görev 10 | str() – Sayıyı karakter dizisine çevirme |
+| Görev 11 | Tip dönüşümü ile doğru işlem yapma |
+| Görev 12 | format() metodu |
+| Görev 13 | format() ile indeks kullanımı |
+| Görev 14 | f-string kullanımı |
+| Görev 15 | f-string içinde ifade kullanımı |
+| Görev 16 | round() fonksiyonu |
+| Görev 17 | bool() fonksiyonu |
+| Görev 18 | Pratik Örnek – Elektrik faturası hesaplama |
+| Görev 19 | Pratik Örnek – Dikdörtgen alan hesaplama (input ile) |
+
+### 🟨 Cevap Anahtarı (Cell 34)
+
+Yukarıdaki görevlerin tamamlanmış çözümleri.
+
+---
+
 ## Notebooklar
 
 | Dosya | Açıklama |

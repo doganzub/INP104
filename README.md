@@ -117,6 +117,57 @@ INP104/
 3. Notebook oluştur: resmi pedagojik dil + inline yorumlu kodlar
 4. README.md oluştur: konu özeti + öğrenme hedefleri
 
+### Görev ve Cevap Anahtarı Ekleme (Her Hafta İçin)
+
+Her haftalık notebook'un **en sonuna** iki adet kod hücresi eklenmelidir:
+
+**1. Hücre – Alıştırma Görevleri (🟩 GÖREV):**
+- Notebook'taki **her kod hücresine** karşılık gelen bir görev olmalıdır
+- Görevler, orijinal kod örnekleriyle **aynı zorluk seviyesinde** ve **aynı formatta** olmalıdır
+- Görevler, orijinal kodlarla **aynı olmamalı**, çok benzer ama farklı değerlerle yazılmalıdır
+- Her görev `# 🟩 GÖREV [No]: [Konu Başlığı]` formatında başlamalıdır
+- Öğrencinin yapması gereken açıkça yorum satırlarında belirtilmelidir
+- Tamamlanacak kod satırları `# ??? ` yer tutucularıyla verilmelidir
+- Her görevde ilgili orijinal örneğe `# İpucu:` satırıyla referans verilmelidir
+
+```python
+# ============================================================================
+# 🟩 GÖREV 1: [Konu Başlığı]
+# ============================================================================
+# [Öğrencinin ne yapması gerektiğinin açık açıklaması]
+#
+# İpucu: [orijinal kod örneğine referans]
+# ------------------------------------------------------------
+
+# [tamamlanacak_kod = ???]
+```
+
+**2. Hücre – Cevap Anahtarı (🟨 CEVAP):**
+- Görevlerdeki **her sorunun** tamamlanmış çözümü olmalıdır
+- Görevlerle **tam uyumlu** olmalıdır (aynı değişken isimleri, aynı değerler)
+- Her cevap `# 🟨 CEVAP [No]: [Konu Başlığı]` formatında başlamalıdır
+- Cevaplar arasında `print(f"\n{'-'*82}\n")` ayırıcısı kullanılmalıdır
+- Her satırda inline yorum bulunmalıdır
+
+```python
+# ============================================================================
+# 🟨 CEVAP 1: [Konu Başlığı]
+# ============================================================================
+tamamlanmis_kod = "değer"  # Satır sonu açıklaması
+print(tamamlanmis_kod)  # Beklenen çıktı açıklaması
+
+print(f"\n{'-'*82}\n")
+```
+
+**Kontrol Listesi:**
+- [ ] Notebook'taki TÜM kod hücreleri için görev var mı?
+- [ ] Görevler orijinal kodlarla aynı zorluk seviyesinde mi?
+- [ ] Görevler orijinal kodlardan farklı değerler kullanıyor mu?
+- [ ] Cevap anahtarı görevlerle tam uyumlu mu?
+- [ ] Öğrenci görev açıklamalarını okuyarak ne yapacağını anlayabiliyor mu?
+
+---
+
 ### Mevcut İçerik Güncelleme
 
 1. Değiştirilecek dosyayı incele
