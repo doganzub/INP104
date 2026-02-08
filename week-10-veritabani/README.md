@@ -79,6 +79,35 @@ Bu dersin sonunda öğrenci:
 
 ---
 
+## Alıştırma Görevleri
+
+Notebook'un sonunda görev hücreleri ve bir cevap anahtarı hücresi bulunmaktadır:
+
+### 🟩 Görevler (Cell 35-46)
+
+Her görev ayrı bir kod hücresindedir. Öğrenci `???` işaretlerinin yerine doğru kodları yazar.
+
+| Görev | Konu |
+|-------|------|
+| Görev 1 | Veri tabanı bağlantısı ve imleç oluşturma |
+| Görev 2 | Tablo oluşturma (CREATE TABLE) |
+| Görev 3 | Tek kayıt ekleme (INSERT) |
+| Görev 4 | Çoklu kayıt ekleme (executemany) |
+| Görev 5 | Tüm verileri seçme (SELECT *) |
+| Görev 6 | Koşullu seçim (WHERE) |
+| Görev 7 | Sıralama ve limit (ORDER BY, LIMIT) |
+| Görev 8 | SQL fonksiyonları (COUNT, AVG, MIN, MAX) |
+| Görev 9 | Veri güncelleme (UPDATE) |
+| Görev 10 | Veri silme (DELETE) |
+| Görev 11 | with ifadesi ile güvenli kullanım |
+| Görev 12 | Pratik Örnek – Basit kayıt sistemi |
+
+### 🟨 Cevap Anahtarı (Cell 47)
+
+Yukarıdaki görevlerin tamamlanmış çözümleri.
+
+---
+
 ## Notebooklar
 
 | Dosya | Açıklama |

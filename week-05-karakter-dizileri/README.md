@@ -93,6 +93,45 @@ for indeks, harf in enumerate("Python"):
 
 ---
 
+## Alıştırma Görevleri
+
+Notebook'un sonunda görev hücreleri ve bir cevap anahtarı hücresi bulunmaktadır:
+
+### 🟩 Görevler (Cell 55-76)
+
+Her görev ayrı bir kod hücresindedir. Öğrenci `???` işaretlerinin yerine doğru kodları yazar.
+
+| Görev | Konu |
+|-------|------|
+| Görev 1 | Karakter dizisi tanımlama |
+| Görev 2 | İndeksleme – Pozitif ve negatif |
+| Görev 3 | İndeksleme – len() ile son karakter |
+| Görev 4 | İndeksleme – Döngü ile erişim |
+| Görev 5 | Dilimleme – Temel |
+| Görev 6 | Dilimleme – Kısa yazım |
+| Görev 7 | Dilimleme – Negatif indekslerle |
+| Görev 8 | Dilimleme – Adım değeri ve ters çevirme |
+| Görev 9 | Karakter dizisi değiştirme (immutable) |
+| Görev 10 | replace() metodu |
+| Görev 11 | split() metodu |
+| Görev 12 | split() ile kısaltma çıkarma |
+| Görev 13 | join() metodu |
+| Görev 14 | lower() ve upper() metotları |
+| Görev 15 | capitalize(), title(), swapcase() |
+| Görev 16 | count() metodu |
+| Görev 17 | find() metodu |
+| Görev 18 | strip() metotları |
+| Görev 19 | startswith() ve endswith() |
+| Görev 20 | isXXX() metotları |
+| Görev 21 | enumerate() fonksiyonu |
+| Görev 22 | Pratik Örnek – Palindrom kontrolü |
+
+### 🟨 Cevap Anahtarı (Cell 77)
+
+Yukarıdaki görevlerin tamamlanmış çözümleri.
+
+---
+
 ## Notebooklar
 
 | Dosya | Açıklama |

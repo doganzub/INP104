@@ -76,6 +76,36 @@ Bu dersin sonunda öğrenci:
 
 ---
 
+## Alıştırma Görevleri
+
+Notebook'un sonunda görev hücreleri ve bir cevap anahtarı hücresi bulunmaktadır:
+
+### 🟩 Görevler (Cell 30-42)
+
+Her görev ayrı bir kod hücresindedir. Öğrenci `???` işaretlerinin yerine doğru kodları yazar.
+
+| Görev | Konu |
+|-------|------|
+| Görev 1 | Dosya oluşturma ve yazma – "w" kipi |
+| Görev 2 | Dosya ekleme – "a" kipi |
+| Görev 3 | read() metodu – Tüm dosyayı okuma |
+| Görev 4 | readline() metodu – Satır satır okuma |
+| Görev 5 | readlines() metodu – Liste olarak okuma |
+| Görev 6 | Dosya üzerinde doğrudan döngü |
+| Görev 7 | with ifadesi – Yazma |
+| Görev 8 | with ifadesi – Okuma |
+| Görev 9 | with ile dosya kopyalama |
+| Görev 10 | try-except – FileNotFoundError |
+| Görev 11 | seek() ve tell() |
+| Görev 12 | writelines() metodu |
+| Görev 13 | Pratik Örnek – Kelime sayacı |
+
+### 🟨 Cevap Anahtarı (Cell 43)
+
+Yukarıdaki görevlerin tamamlanmış çözümleri.
+
+---
+
 ## Notebooklar
 
 | Dosya | Açıklama |

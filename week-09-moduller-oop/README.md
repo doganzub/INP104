@@ -73,6 +73,34 @@ Bu dersin sonunda öğrenci:
 
 ---
 
+## Alıştırma Görevleri
+
+Notebook'un sonunda görev hücreleri ve bir cevap anahtarı hücresi bulunmaktadır:
+
+### 🟩 Görevler (Cell 31-41)
+
+Her görev ayrı bir kod hücresindedir. Öğrenci `???` işaretlerinin yerine doğru kodları yazar.
+
+| Görev | Konu |
+|-------|------|
+| Görev 1 | import ile modül kullanımı |
+| Görev 2 | from ... import ile belirli öğe alma |
+| Görev 3 | Takma ad (alias) ile import |
+| Görev 4 | random modülü |
+| Görev 5 | dir() ile modül içeriğini görme |
+| Görev 6 | Basit sınıf tanımlama – Sınıf nitelikleri |
+| Görev 7 | __init__ metodu ve nesne oluşturma |
+| Görev 8 | self ile metot tanımlama |
+| Görev 9 | Sınıf niteliği vs Örnek niteliği |
+| Görev 10 | Kalıtım (Inheritance) |
+| Görev 11 | Pratik Örnek – Banka hesabı |
+
+### 🟨 Cevap Anahtarı (Cell 42)
+
+Yukarıdaki görevlerin tamamlanmış çözümleri.
+
+---
+
 ## Notebooklar
 
 | Dosya | Açıklama |

@@ -78,6 +78,38 @@ Bu dersin sonunda öğrenci:
 
 ---
 
+## Alıştırma Görevleri
+
+Notebook'un sonunda görev hücreleri ve bir cevap anahtarı hücresi bulunmaktadır:
+
+### 🟩 Görevler (Cell 38-52)
+
+Her görev ayrı bir kod hücresindedir. Öğrenci `???` işaretlerinin yerine doğru kodları yazar.
+
+| Görev | Konu |
+|-------|------|
+| Görev 1 | Basit fonksiyon tanımlama ve çağırma |
+| Görev 2 | Fonksiyonu birden fazla çağırma |
+| Görev 3 | Tek parametreli fonksiyon |
+| Görev 4 | Çoklu parametreli fonksiyon |
+| Görev 5 | İsimli argümanlar (keyword arguments) |
+| Görev 6 | Varsayılan parametre değerleri |
+| Görev 7 | Varsayılan değerli üs hesaplama |
+| Görev 8 | print() vs return farkı |
+| Görev 9 | Tek değer döndürme |
+| Görev 10 | Çoklu değer döndürme |
+| Görev 11 | *args – Sınırsız pozisyonel argüman |
+| Görev 12 | **kwargs – Sınırsız isimli argüman |
+| Görev 13 | Docstring kullanımı |
+| Görev 14 | Pratik Örnek – Hesap makinesi |
+| Görev 15 | Pratik Örnek – Asal sayı kontrolü |
+
+### 🟨 Cevap Anahtarı (Cell 53)
+
+Yukarıdaki görevlerin tamamlanmış çözümleri.
+
+---
+
 ## Notebooklar
 
 | Dosya | Açıklama |

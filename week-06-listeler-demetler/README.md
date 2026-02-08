@@ -86,6 +86,40 @@ Bu dersin sonunda öğrenci:
 
 ---
 
+## Alıştırma Görevleri
+
+Notebook'un sonunda görev hücreleri ve bir cevap anahtarı hücresi bulunmaktadır:
+
+### 🟩 Görevler (Cell 43-59)
+
+Her görev ayrı bir kod hücresindedir. Öğrenci `???` işaretlerinin yerine doğru kodları yazar.
+
+| Görev | Konu |
+|-------|------|
+| Görev 1 | Liste tanımlama |
+| Görev 2 | list() ile liste oluşturma |
+| Görev 3 | Liste öğelerine erişim – İndeksleme |
+| Görev 4 | Liste dilimleme |
+| Görev 5 | İç içe listeler |
+| Görev 6 | Liste öğelerini değiştirme |
+| Görev 7 | Liste birleştirme ve del |
+| Görev 8 | append() ve extend() |
+| Görev 9 | insert() metodu |
+| Görev 10 | remove() ve pop() |
+| Görev 11 | sort() ve reverse() |
+| Görev 12 | index() ve count() |
+| Görev 13 | Liste kopyalama – Referans vs Kopya |
+| Görev 14 | Demet tanımlama |
+| Görev 15 | Demet erişim ve metotları |
+| Görev 16 | Pratik Örnek – Not ortalaması |
+| Görev 17 | Pratik Örnek – Tekrar eden elemanlar |
+
+### 🟨 Cevap Anahtarı (Cell 60)
+
+Yukarıdaki görevlerin tamamlanmış çözümleri.
+
+---
+
 ## Notebooklar
 
 | Dosya | Açıklama |

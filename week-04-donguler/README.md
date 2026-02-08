@@ -127,6 +127,44 @@ for i in range(3):      # Dış: 3 tur
 
 ---
 
+## Alıştırma Görevleri
+
+Notebook'un sonunda görev hücreleri ve bir cevap anahtarı hücresi bulunmaktadır:
+
+### 🟩 Görevler (Cell 48-68)
+
+Her görev ayrı bir kod hücresindedir. Öğrenci `???` işaretlerinin yerine doğru kodları yazar.
+
+| Görev | Konu |
+|-------|------|
+| Görev 1 | while döngüsü – Temel kullanım |
+| Görev 2 | while döngüsü – Sayaç ile tekrar |
+| Görev 3 | while döngüsü – bool değeri takibi |
+| Görev 4 | while True ve break |
+| Görev 5 | while True ile menü sistemi |
+| Görev 6 | for döngüsü – Karakter dizisi üzerinde |
+| Görev 7 | for döngüsü – Türkçe karakterler |
+| Görev 8 | for döngüsü – Sayılarla işlem |
+| Görev 9 | range(stop) |
+| Görev 10 | range(start, stop) |
+| Görev 11 | range(start, stop, step) |
+| Görev 12 | range() ile tersten sayma |
+| Görev 13 | break deyimi |
+| Görev 14 | continue deyimi |
+| Görev 15 | pass deyimi |
+| Görev 16 | for-else yapısı |
+| Görev 17 | İç içe döngü – Temel |
+| Görev 18 | İç içe döngü – Çarpım tablosu |
+| Görev 19 | Pratik Örnek – Tek sayıları bulma (while ile) |
+| Görev 20 | Pratik Örnek – Parola doğrulama (for-else) |
+| Görev 21 | Pratik Örnek – Türkçe karakter kontrolü |
+
+### 🟨 Cevap Anahtarı (Cell 69)
+
+Yukarıdaki görevlerin tamamlanmış çözümleri.
+
+---
+
 ## Notebooklar
 
 | Dosya | Açıklama |
