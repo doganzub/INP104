@@ -1,181 +1,129 @@
-# Hafta 4: Döngüler
+# Hafta 4: Döngüler (Loops)
 
 ## Konu Özeti
 
-Bu hafta Python programlama dilinde döngü yapıları incelenmektedir. Döngüler, belirli kod bloklarının tekrar tekrar çalıştırılmasını sağlayan yapılardır. Python'da iki temel döngü türü bulunmaktadır: `while` döngüsü ve `for` döngüsü. Ayrıca döngülerin akışını kontrol eden `break`, `continue` ve `pass` ifadeleri de bu hafta ele alınmaktadır.
+Bu hafta Python programlama dilinde **döngü yapıları** kapsamlı şekilde işlenmektedir. Döngüler, belirli kod bloklarının tekrar tekrar çalıştırılmasını sağlayan yapılardır. Python'da iki temel döngü türü bulunur: `while` ve `for`. Ayrıca döngülerin akışını kontrol eden `break`, `continue` ve `pass` deyimleri de bu hafta ele alınmaktadır.
 
 ---
 
-## Neden Önemli
+## Neden Önemli?
 
-Programlamada döngüler, tekrarlayan işlemlerin otomatikleştirilmesi için temel yapı taşlarıdır. Veri listelerinin işlenmesi, kullanıcı girişlerinin doğrulanması, dosya işlemleri ve pek çok algoritmik çözüm döngüler sayesinde gerçekleştirilir.
+Programlamada döngüler, tekrarlayan işlemlerin otomatikleştirilmesi için temel yapı taşlarıdır:
+- Program sürekli çalışır, tek seferlik değil
+- Kullanıcı istediği kadar işlem yapabilir
+- Program ancak biz istediğimizde kapanır
+
+**Kullanım Alanları:** Veri işleme, kullanıcı girişi doğrulama, dosya işlemleri, algoritmik çözümler
 
 ---
 
 ## Öğrenme Hedefleri
 
-Bu bölümü tamamladığınızda aşağıdaki becerileri kazanmış olacaksınız:
+Bu dersin sonunda öğrenci:
 
-- `while` döngüsü ile koşula bağlı tekrarlama yapabilme
-- `for` döngüsü ile iterasyon gerçekleştirebilme
-- `range()` fonksiyonu ile sayı dizileri oluşturabilme
-- `break`, `continue` ve `pass` ifadelerini etkin kullanabilme
-- İç içe döngüler tasarlayabilme
+- `while` döngüsü ile koşula bağlı tekrarlama yapabilecektir
+- Sonsuz döngüden kaçınma yöntemlerini bilecektir
+- `while True` ve `break` kombinasyonunu kullanabilecektir
+- `for` döngüsü ile koleksiyonlar üzerinde dolaşabilecektir
+- `range()` fonksiyonunun tüm parametrelerini uygulayabilecektir
+- `break`, `continue`, `pass` deyimlerini doğru kullanabilecektir
+- `döngü + else` yapısını anlayabilecektir
+- İç içe döngüler tasarlayabilecektir
 
 ---
 
 ## Konu Başlıkları
 
-### 4.1 while Döngüsü
+### 4.1 Döngü Kavramı ve Önemi
 
-`while` döngüsü, belirtilen koşul doğru olduğu sürece kod bloğunu tekrar eder. Koşul yanlış olduğunda döngüden çıkılır.
+Döngüler programların tekrar tekrar çalışmasını sağlar. İngilizce'de "loop" olarak adlandırılır.
 
-**Temel Sözdizimi:**
+---
 
-```python
-while kosul:                           # Koşul doğru olduğu sürece döngü çalışır
-    # Tekrarlanacak kod bloğu          # Her tekrarda bu blok çalıştırılır
-```
+### 4.2 while Döngüsü
 
-**Örnek - Sayaç Döngüsü:**
+`while` = "... olduğu sürece"
 
 ```python
-sayac = 0                              # Sayaç değişkeni başlangıç değeri ile tanımlanır
-while sayac < 5:                       # Sayaç 5'ten küçük olduğu sürece döngü devam eder
-    print(f"Sayaç: {sayac}")           # Mevcut sayaç değeri ekrana yazdırılır
-    sayac += 1                         # Sayaç değeri 1 artırılır (sonsuz döngü önlenir)
+while koşul:
+    # koşul True olduğu sürece bu blok tekrarlanır
 ```
 
-**Çıktı:**
-```
-Sayaç: 0
-Sayaç: 1
-Sayaç: 2
-Sayaç: 3
-Sayaç: 4
+**Sonsuz Döngü Riski:** Koşulu değiştiren bir kod olmazsa döngü sonsuza kadar çalışır!
+
+---
+
+### 4.3 while True ve break
+
+```python
+while True:  # Aksi belirtilmediği sürece çalış
+    if çıkış_koşulu:
+        break  # Döngüyü kır ve çık
 ```
 
 ---
 
-### 4.2 for Döngüsü
+### 4.4 for Döngüsü
 
-`for` döngüsü, bir dizi veya iterable (yinelenebilir) nesne üzerinde eleman eleman dolaşır. Her turda bir sonraki elemana geçilir.
-
-**Karakter Dizisi Üzerinde Döngü:**
+Koleksiyon üzerinde eleman eleman dolaşır.
 
 ```python
-isim = "Python"                        # İşlenecek karakter dizisi tanımlanır
-for harf in isim:                      # Her turda bir karakter 'harf' değişkenine atanır
-    print(harf)                        # Mevcut karakter ekrana yazdırılır
+for değişken in koleksiyon:
+    # her eleman için bu blok çalışır
 ```
 
-**Çıktı:**
-```
-P
-y
-t
-h
-o
-n
-```
+**Not:** Sayılar (int, float) üzerinde döngü kurulamaz! (not iterable)
 
-**range() Fonksiyonu ile Döngü:**
+---
 
-`range()` fonksiyonu, belirtilen aralıkta sayı dizisi oluşturur.
+### 4.5 range() Fonksiyonu
+
+| Söz Dizimi | Açıklama |
+|------------|----------|
+| `range(stop)` | 0'dan stop-1'e kadar |
+| `range(start, stop)` | start'tan stop-1'e kadar |
+| `range(start, stop, step)` | step kadar atlayarak |
+
+**Önemli:** `stop` değeri sonuca dahil değildir!
+
+---
+
+### 4.6 Döngü Kontrol Deyimleri
+
+| Deyim | İşlevi |
+|-------|--------|
+| `break` | Döngüyü tamamen sonlandır |
+| `continue` | Mevcut adımı atla, sonrakine geç |
+| `pass` | Hiçbir şey yapma (yer tutucu) |
+
+---
+
+### 4.7 Döngü ile else Kullanımı
+
+- `break` çalışmadıysa → `else` bloğu **çalışır**
+- `break` çalıştıysa → `else` bloğu **çalışmaz**
+
+---
+
+### 4.8 İç İçe Döngüler
+
+Dış döngünün **her bir turu** için iç döngü **tamamen** çalışır.
 
 ```python
-for i in range(5):                     # 0'dan 4'e kadar (5 dahil değil) sayı üretir
-    print(i)                           # Üretilen sayı ekrana yazdırılır
-```
-
-**Çıktı:**
-```
-0
-1
-2
-3
-4
-```
-
-**range() Fonksiyonunun Farklı Kullanımları:**
-
-```python
-for i in range(1, 6):                  # 1'den 5'e kadar sayı üretir (6 dahil değil)
-    print(i)                           # Çıktı: 1, 2, 3, 4, 5
-
-for i in range(0, 10, 2):              # 0'dan 10'a kadar 2'şer artarak sayı üretir
-    print(i)                           # Çıktı: 0, 2, 4, 6, 8
+for i in range(3):      # Dış: 3 tur
+    for j in range(2):  # İç: her dış turda 2 tur
+        print(i, j)     # Toplam: 3 x 2 = 6 yazdırma
 ```
 
 ---
 
-### 4.3 Döngü Kontrol İfadeleri
+### 4.9 while vs for Karşılaştırması
 
-Döngülerin akışını kontrol etmek için üç önemli ifade kullanılır:
-
-**break - Döngüyü Sonlandırma:**
-
-```python
-for i in range(10):                    # 0'dan 9'a kadar döngü başlatılır
-    if i == 5:                         # Eğer i değeri 5'e eşit ise
-        break                          # Döngü tamamen sonlandırılır
-    print(i)                           # Sadece 0, 1, 2, 3, 4 yazdırılır
-```
-
-**continue - Adımı Atlama:**
-
-```python
-for i in range(10):                    # 0'dan 9'a kadar döngü başlatılır
-    if i % 2 == 0:                     # Eğer i değeri çift sayı ise
-        continue                       # Bu tur atlanır, sonraki tura geçilir
-    print(i)                           # Sadece tek sayılar yazdırılır: 1, 3, 5, 7, 9
-```
-
-**pass - Boş İşlem (Yer Tutucu):**
-
-```python
-for i in range(5):                     # Döngü başlatılır
-    if i == 3:                         # Koşul kontrolü yapılır
-        pass                           # Hiçbir işlem yapılmaz (yer tutucu)
-    print(i)                           # Tüm sayılar yazdırılır: 0, 1, 2, 3, 4
-```
-
----
-
-### 4.4 İç İçe Döngüler
-
-Bir döngü içinde başka bir döngü kullanılabilir. Bu yapı özellikle çok boyutlu veri yapılarında ve matris işlemlerinde kullanılır.
-
-**Örnek - Çarpım Tablosu:**
-
-```python
-for i in range(1, 4):                  # Dış döngü: 1, 2, 3 değerlerini alır
-    for j in range(1, 4):              # İç döngü: Her dış döngü turu için 1, 2, 3 değerlerini alır
-        print(f"{i} x {j} = {i*j}")    # Çarpım sonucu formatlanarak yazdırılır
-    print("---")                       # Her dış döngü turu sonunda ayraç yazdırılır
-```
-
----
-
-### 4.5 Pratik Uygulama: Parola Doğrulama
-
-```python
-dogru_parola = "python123"             # Sistem tarafından kabul edilecek parola tanımlanır
-deneme_hakki = 3                       # Kullanıcıya verilen deneme hakkı sayısı
-
-while deneme_hakki > 0:                # Deneme hakkı kaldığı sürece döngü devam eder
-    girilen = input("Parola: ")        # Kullanıcıdan parola girişi alınır
-    
-    if girilen == dogru_parola:        # Girilen parola doğru ise
-        print("Giriş başarılı!")       # Başarı mesajı gösterilir
-        break                          # Döngüden çıkılır
-    else:                              # Parola yanlış ise
-        deneme_hakki -= 1              # Kalan deneme hakkı azaltılır
-        print(f"Hatalı! Kalan hak: {deneme_hakki}")  # Uyarı mesajı gösterilir
-
-if deneme_hakki == 0:                  # Tüm haklar tükendiyse
-    print("Hesap kilitlendi!")         # Kilitleme mesajı gösterilir
-```
+| while | for |
+|-------|-----|
+| Koşul True iken çalışır | Koleksiyon bitene kadar çalışır |
+| Sayaç elle yönetilir | Sayaç otomatik ilerler |
+| Belirsiz tekrar sayısı | Belirli tekrar sayısı |
 
 ---
 
@@ -183,7 +131,7 @@ if deneme_hakki == 0:                  # Tüm haklar tükendiyse
 
 | Dosya | Açıklama |
 |-------|----------|
-| `04-donguler.ipynb` | Haftalık ders notebooku |
+| `04-donguler.ipynb` | Haftalık ders notebooku - Detaylı açıklamalar ve inline yorumlar içerir |
 
 ---
 
@@ -193,3 +141,17 @@ if deneme_hakki == 0:                  # Tüm haklar tükendiyse
 2. Kullanıcıdan alınan bir sayının faktöriyelini hesaplayınız.
 3. Fibonacci dizisinin ilk 20 terimini ekrana yazdırınız.
 4. 1-100 arasındaki asal sayıları bulan bir program yazınız.
+5. Kullanıcıdan parola alıp, 3 deneme hakkı ile doğrulama yapan program yazınız.
+
+---
+
+## Referanslar
+
+- Python Programlama Dili Referans Belgesi (`/docs/yazbel.md`)
+- Döngüler bölümü (satır 12669+)
+
+---
+
+## Colab Ortamı
+
+Bu ders Google Colab üzerinde çalışılmaktadır.
