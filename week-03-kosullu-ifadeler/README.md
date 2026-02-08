@@ -98,6 +98,39 @@ if dış_koşul:
 
 ---
 
+## Alıştırma Görevleri
+
+Notebook'un sonunda görev hücreleri ve bir cevap anahtarı hücresi bulunmaktadır:
+
+### 🟩 Görevler (Cell 31-46)
+
+Her görev ayrı bir kod hücresindedir. Öğrenci `???` işaretlerinin yerine doğru kodları yazar.
+
+| Görev | Konu |
+|-------|------|
+| Görev 1 | if deyimi – Basit koşul kontrolü |
+| Görev 2 | if deyimi – Kullanıcıdan alınan değerle kontrol |
+| Görev 3 | Karşılaştırma operatörleri |
+| Görev 4 | = ve == arasındaki fark |
+| Görev 5 | if-else yapısı |
+| Görev 6 | if-else ile input – Pin kontrolü |
+| Görev 7 | if-elif-else yapısı – Harf notu |
+| Görev 8 | if ve elif farkını gösterme |
+| Görev 9 | and operatörü |
+| Görev 10 | or operatörü |
+| Görev 11 | not operatörü |
+| Görev 12 | Mantıksal operatörlerin birlikte kullanımı |
+| Görev 13 | İç içe koşullar (Nested Conditions) |
+| Görev 14 | Pratik Örnek – Vergi hesaplama |
+| Görev 15 | Pratik Örnek – En küçük sayıyı bulma |
+| Görev 16 | Pratik Örnek – Şehir tanıma |
+
+### 🟨 Cevap Anahtarı (Cell 47)
+
+Yukarıdaki görevlerin tamamlanmış çözümleri.
+
+---
+
 ## Notebooklar
 
 | Dosya | Açıklama |
