@@ -72,6 +72,7 @@ kod_satırı  # Satır sonu açıklaması
 
 | Hafta | Konu | Klasör | Durum |
 |-------|------|--------|-------|
+| 0 | Programlama - Derse Genel Bakis ve Kritik Onemi | `week-00-programlama/` | ✅ Tamamlandı |
 | 1 | Python'a Giriş | `week-01-python-giris/` | ✅ Tamamlandı |
 | 2 | Gömülü Fonksiyonlar ve Değişkenler | `week-02-fonksiyonlar-degiskenler/` | Bekliyor |
 | 3 | Koşullu İfadeler (if-elif-else) | `week-03-kosullu-ifadeler/` | Bekliyor |
@@ -93,10 +94,15 @@ INP104/
 ├── docs/
 │   ├── yazbel.md                      # Ana referans kaynak (Python belgesi)
 │   ├── yazbel.pdf                     # Referans PDF
+│   ├── active_it_roles_report.md      # Bilisim meslek ve ilan haritasi
+│   ├── bilisim_model_academic_research.md  # AHP kariyer secim modeli
 │   └── 2S_task_veri_hazirlama.ipynb   # Örnek format notebook
 ├── tools/
 │   ├── yazbel_web_scraper.py          # Referans içerik çekme scripti
 │   └── yazbel_pdf_extractor.py        # PDF dönüştürme scripti
+├── week-00-programlama/
+│   ├── README.md
+│   └── 00-programlama-giris.ipynb
 ├── week-01-python-giris/
 │   ├── README.md
 │   └── 01-python-giris.ipynb
