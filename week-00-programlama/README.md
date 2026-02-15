@@ -1,257 +1,170 @@
-# Hafta 0: Programlama - Derse Genel Bakis ve Kritik Onemi
-
-## Konu Ozeti
-
-Bu ders, INP104 mufredatina baslamadan once ogrenciye **buyuk resmi** gosterir: Programlama bilgisi neden bilisim kariyerinin vazgecilmezidir? Bu soru, somut piyasa verileri, akademik arastirmalar ve gercek is ilanlari ile cevaplanir. Bu hafta, ogrenci hangi kariyer yolunu secerse secsin programlamanin **kritik ve kacinilamaz** oldugunu kavrar.
+# Hafta 0: Programlamaya Genel Bakis ve Kritik Onemi
 
 ---
 
-## Ogrenme Hedefleri
+## Bu Ders Neden Hayatinizi Degistirecek?
 
-Bu dersin sonunda ogrenci:
-- Bilisim sektorundeki 4 ana kariyer yolunu (AI, Cloud/DevOps, Veri, Siber Guvenlik) tanimlar
-- Her yolda programlamanin neden **vazgecilmez** oldugunu somut orneklerle aciklar
-- PATIKA sistemi uzerinden kariyer agirliklendirmasinin ne anlama geldigini kavrar
-- INP104 dersinin 10 haftalik iceriginin bu kariyer yollarini nasil destekledigini anlar
+Bilisim dunyasinda 4 buyuk kariyer yolu vardir. Ister yapay zeka gelistirin, ister bulut sistemleri yonetin, ister veri analizi yapin, ister siber guvenlik uzmani olun - **hepsinin ortak paydasi programlamadir.**
 
----
+Programlama bilmeden bu mesleklerin hicbirini yapamazsiniz. Bu bir tercih degil, **gercektir.**
 
-## 1. Bu Ders Neden Kritik?
-
-### 1.1 Temel Gercek
-
-Bilisim sektorunde calisan bir profesyonel icin programlama bilgisi, bir doktor icin anatomi bilgisi ne ise **odur**. Bu, secimlik bir yetkinlik degildir; **mesleki var olma kosulu**dur.
-
-Asagidaki tablo, akademik ve endustri kaynaklarina dayanan bir calismanin (Bilisim Kariyer Secimi AHP Modeli) ortaya koydugu 4 kariyer yolunu gosterir. Dikkat edilmesi gereken nokta sudur: **4 alternatifin tamami programlama bilgisini zorunlu yetkinlik olarak talep eder.**
-
-### 1.2 Kaynaklar ve Dayanak
-
-Bu dersin kritik onem argumanlari iki temel calismaya dayanir:
-
-**Calisma 1: Bilisimde Somut Meslek ve Ilan Haritasi (Subat 2026)**
-- Gercek is ilanlari ve aktif pozisyonlarla desteklenmis piyasa analizi
-- 4 kariyer alaninda somut rol isimleri, ornek sirketler ve ilan linkleri
-- Kaynak: `/docs/active_it_roles_report.md`
-
-**Calisma 2: Bilisim Kariyer Secimi AHP Modeli - Akademik Arastirma Raporu**
-- WEF Future of Jobs 2025, SFIA 9, ACM CS2023, NIST NICE Framework gibi uluslararasi standartlara dayanan akademik model
-- 4 alternatif, 8 ana kriter, 16 alt kriter ile yapılandırılmis karar destek sistemi
-- Kaynak: `/docs/bilisim_model_academic_research.md`
+Bu ders, o temeli atar.
 
 ---
 
-## 2. 4 Kariyer Yolu ve Programlamanin Rolu
+## Bilisimde 4 Buyuk Kariyer Yolu
 
-### Kritik Mesaj: Hangi Yol Cikarsa Ciksin, Programlama SART
-
-PATIKA sistemi uzerinden yapacaginiz agirliklandirma sonucunda asagidaki 4 kariyer yolundan biri size uygun cikacaktir. **Hangisi cikarsa ciksin, bu derste ogrenecekleriniz o kariyer icin temel taslardir.**
+Bilisim sektorunde bugun aktif olarak is ilani acilan, surekli buyuyen ve gelecegi garanti 4 kariyer yolu vardir. Hangi yolu secerseniz secin, bu derste ogrenecekleriniz o yolun **giris bileti**dir.
 
 ---
 
-### 2.1 AI ve Agent Sistemleri
+### 1. AI ve Agent Sistemleri
 
-> "Kod yazmaktan ote, AI modellerini is sureclerine baglayan ve AI Agent'lari yoneten muhendislik dali"
+AI modelleri gelistiren, is sureclerine yapay zeka entegre eden ve AI ajanlari yoneten muhendislerdir.
 
-**Neden programlama sart?**
-- ML modeli egitimi ve MLOps sureclerinin tamami Python uzerine kuruludur
-- AI Agent gelistirme, API entegrasyonu ve surec otomasyonu kod yazma becerisini zorunlu kilar
-- Teknoloji adaptasyonu (yeni araclar, yeni frameworkler) icin programlama altyapisi olmazsa olmazdir
+**Bu alanda ne yapilir?**
+- Yapay zeka modelleri egitilir ve uretim ortamina alinir
+- Tekrarlayan is surecleri AI ile otomatize edilir
+- Farkli sistemler API ve AI ajanlari ile birbirine baglanir
 
-**INP104 baglantisi:**
-| INP104 Haftasi | AI Kariyerindeki Karsiligi |
-|----------------|---------------------------|
-| Hafta 2: Degiskenler, Input | Model parametrelerini tanimlama |
-| Hafta 4: Donguler | Veri setleri uzerinde iterasyon |
-| Hafta 7: Dosya Islemleri | Veri okuma/yazma, log yonetimi |
-| Hafta 8: Fonksiyonlar | Moduler model pipeline'lari |
-| Hafta 9: OOP | ML framework'leri (sinif yapilari) |
-| Hafta 10: Veritabani | Egitim verisi yonetimi |
+**Programlama olmadan?** Bir satir bile AI kodu yazamazsiniz. Model egitimi, veri isleme, API baglantisi - hepsi Python ile yapilir.
+
+**Gercek dunyadan:** Bugun Turkiye'de QNB, Scorp, Oracle gibi sirketler AI pozisyonlari icin **Python bilgisini zorunlu** tutuyor. Global olarak remote calisilabalicek binlerce AI pozisyonu acik.
 
 ---
 
-### 2.2 Cloud, DevOps ve Platform Muhendisligi
+### 2. Cloud, DevOps ve Platform Muhendisligi
 
-> "Yazilimin calisacagi altyapiyi kuranlar. Turkiye'de en garanti is kapisi"
+Yazilimin calistigi altyapiyi kuran, yoneten ve surekli ayakta tutan muhendislerdir. Turkiye'de en stabil ve garanti is kapisidir.
 
-**Neden programlama sart?**
-- Infrastructure as Code (IaC): Altyapi artik kod ile yonetilir, elle konfigürasyon donemi bitmistir
-- CI/CD pipeline'lari tamamen script ve otomasyon uzerine kuruludur
-- Kubernetes, Docker, Terraform gibi tum modern araclar programlama bilgisi gerektirir
+**Bu alanda ne yapilir?**
+- Bulut altyapilari tasarlanir ve yonetilir
+- Yazilim degisiklikleri otomatik test ve dagitim ile yurutulur
+- Sistemlerin 7/24 calisir durumda kalmasi saglanir
 
-**INP104 baglantisi:**
-| INP104 Haftasi | Cloud/DevOps Kariyerindeki Karsiligi |
-|----------------|--------------------------------------|
-| Hafta 3: Kosullar | Deployment kosullari, feature flag'ler |
-| Hafta 4: Donguler | Toplu sunucu yonetimi, batch islemler |
-| Hafta 7: Dosya Islemleri | Konfigurasyon dosyalari, YAML/JSON islemleri |
-| Hafta 8: Fonksiyonlar | Otomasyon scriptleri |
-| Hafta 9: Moduller | Harici kutuphane kullanimi (boto3, azure-sdk) |
+**Programlama olmadan?** Altyapi artik kod ile yonetilir. Elle sunucu kuran, tek tek konfigurasyon yapan donem bitti. Script yazamayan bir DevOps muhendisi **is bulamaz.**
+
+**Gercek dunyadan:** Amazon, Adesso, Parloa gibi sirketler giris seviyesinde bile otomasyon ve scripting becerisi bekliyor. Junior DevOps ilanlarinda bile Python veya Bash bilgisi zorunlu.
 
 ---
 
-### 2.3 Veri Analitigi ve Muhendisligi
+### 3. Veri Analitigi ve Muhendisligi
 
-> "FinTech ve E-ticaretin bel kemigi. AI'nin yakitini hazirlayanlar"
+Veriden anlam cikaran, veri hatlari tasarlayan ve sirketlerin veri odakli karar almasini saglayan uzmanlardir. AI'nin yakitini hazirlayanlar bunlardir.
 
-**Neden programlama sart?**
-- Veri analizi ve icgoru cikarma sureclerinin standart araci Python ve SQL'dir
-- ETL/ELT pipeline tasarimi tamamen kod ile yapilir
-- Veri gorsellestirme ve BI dashboard'lari programlama bilgisi gerektirir
+**Bu alanda ne yapilir?**
+- Ham veriden anlamli icgorular cikarilir
+- Veri kaynaklarindan ambarlara veri hatlari (ETL) tasarlanir
+- Dashboard ve raporlarla sonuclar paydaSlara sunulur
 
-**INP104 baglantisi:**
-| INP104 Haftasi | Veri Kariyerindeki Karsiligi |
-|----------------|------------------------------|
-| Hafta 2: Degiskenler, f-string | Veri formatlama ve raporlama |
-| Hafta 4: Donguler | Veri setleri uzerinde islem |
-| Hafta 5: Stringler | Metin verisi temizleme, parsing |
-| Hafta 6: Listeler | Veri koleksiyonlari yonetimi |
-| Hafta 7: Dosya Islemleri | CSV/JSON dosya okuma/yazma |
-| Hafta 10: Veritabani | SQL sorgulari, CRUD islemleri |
+**Programlama olmadan?** Veri analizi demek Python ve SQL demektir. Excel ile sinirli kalan bir analist, **gercek veri problemlerini cozemez.** Buyuk veri setleri uzerinde islem yapmak icin kod yazmak zorunludur.
+
+**Gercek dunyadan:** Bugun is ilanlarinda "AI-Destekli Veri Analisti" gibi roller ortaya cikiyor. Hermes Iletisim, ChatGPT ve Claude kullanabilmeyi bile **zorunlu yetkinlik** olarak tanimlıyor. Ama bunlari kullanabilmek icin once programlama temeli sart.
 
 ---
 
-### 2.4 Siber Guvenlik
+### 4. Siber Guvenlik
 
-> "Saldirilar arttikca 7/24 izleme (SOC) ihtiyaci bitmiyor"
+Dijital sistemleri saldirilara karsi koruyan, tehditleri izleyen ve guvenlik aciklarini tespit eden uzmanlardir.
 
-**Neden programlama sart?**
-- Tehdit tespiti ve log analizi icin otomasyon scriptleri yazilir
-- Sizma testi (pentest) araclari gelistirmek ve ozellestirmek kod bilgisi gerektirir
-- SIEM entegrasyonu ve olay mudahale sureclerinde scripting vazgecilmezdir
+**Bu alanda ne yapilir?**
+- SIEM araclariyla 7/24 tehdit izleme yapilir
+- Siber saldirilarda olay mudahale ve adli inceleme yurutulur
+- Sistem guvenlik aciklari proaktif olarak tespit edilir (pentest)
 
-**INP104 baglantisi:**
-| INP104 Haftasi | Siber Guvenlik Kariyerindeki Karsiligi |
-|----------------|----------------------------------------|
-| Hafta 3: Kosullar | Kural tabanli tehdit tespiti |
-| Hafta 4: Donguler | Log dosyalari uzerinde tarama |
-| Hafta 5: Stringler | Log satirlarini parse etme |
-| Hafta 7: Dosya Islemleri | Log okuma, rapor yazma |
-| Hafta 8: Fonksiyonlar | Otomasyon araclari gelistirme |
-| Hafta 9: Moduller | Guvenlik kutuphaneleri kullanimi |
+**Programlama olmadan?** Log analizi elle yapilamaz - milyonlarca satir log icinden anlamli veri cikarmaniz gerekir. Sizma testi araclari ozellestirmek, otomasyon scriptleri yazmak, tehdit tespiti icin kural yazmak - **hepsi programlama gerektirir.**
+
+**Gercek dunyadan:** Barikat Siber Guvenlik gibi sirketler surekli SOC Analisti aliyor. KVKK ve GDPR regulasyonlari nedeniyle bu alandaki istihdam **zorunlu olarak** buyuyor. Ama scriptng bilmeyen bir guvenlik uzmani, sadece buton tiklayan bir operator olarak kalir.
 
 ---
 
-## 3. Kariyer Dogrulama Matrisi
+## Ortak Payda: PROGRAMLAMA
 
-| Alan | Piyasa Durumu | Trend | Python Kritikligi |
-|------|---------------|-------|-------------------|
-| **AI / Agent** | 50.000 yeni istihdam beklentisi | Patlama noktasi | ZORUNLU - Birincil dil |
-| **Cloud / DevOps** | Stabil yuksek talep | Her sirketin demirbasi | ZORUNLU - Otomasyon dili |
-| **Veri (Data)** | AI arttikca buyuyor | Kritik buyume | ZORUNLU - Analiz dili |
-| **Siber Guvenlik** | Regulasyonlar alimi zorunlu kiliyor | Zorunlu niş | ZORUNLU - Scripting dili |
+Dikkat edin: 4 kariyer yolunun **hicbirinde** "programlama bilmek isteğe bağlıdır" yazmıyor.
 
-**Sonuc:** Tablonun son sutununa bakin. 4 kariyer yolunun **tamaminda** Python "ZORUNLU" olarak isaretlenmistir. Bu, INP104 dersinin kariyer yolculugunuzdaki **kritik onemi**nin en net ifadesidir.
+| Kariyer Yolu | Programlama Gerekliligi |
+|--------------|------------------------|
+| AI ve Agent Sistemleri | **Zorunlu** - Birincil is araci |
+| Cloud / DevOps | **Zorunlu** - Otomasyon ve scripting |
+| Veri Analitigi | **Zorunlu** - Analiz ve veri hatlari |
+| Siber Guvenlik | **Zorunlu** - Tehdit analizi ve arac gelistirme |
 
----
-
-## 4. PATIKA Sistemi ve Bu Ders
-
-### PATIKA Nedir?
-
-PATIKA, Analitik Hiyerarsi Sureci (AHP) yontemini kullanan bir karar destek sistemidir. Bu sistem, bilisim kariyer seciminde ogrencilerin kendi onceliklerini belirlemelerine ve buna gore en uygun kariyer yolunu bulmalarına yardimci olur.
-
-### Nasil Calisir?
-
-1. Ogrenci, PATIKA uzerinden 8 ana kriter ve 16 alt kriteri kendi onceliklerine gore agirliklandirir
-2. Sistem, AHP pairwise karsilastirma ile 4 alternatif arasindan en uygun kariyer yolunu belirler
-3. Sonuc ne cikarsa ciksin, **INP104 bu kariyer icin temel programlama altyapisini saglar**
-
-### PATIKA Model Yapisi
-
-```
-Bilisim Kariyer Secimi
-├── AI ve Agent Sistemleri
-│   ├── Yapay Zeka Muhendisligi (Model Egitimi, Teknoloji Adaptasyonu)
-│   └── AI Otomasyon ve Ajanlar (Surec Otomasyonu, Sistem Entegrasyonu)
-├── Cloud/DevOps Platform Muhendisligi
-│   ├── Bulut Altyapi Yonetimi (Mimari Tasarim, FinOps)
-│   └── DevOps ve Surekli Teslimat (CI/CD, SRE)
-├── Veri Analitigi ve Muhendisligi
-│   ├── Veri Analizi ve Is Zekasi (Icgoru, Gorsellestirme)
-│   └── Veri Muhendisligi (ETL, Veri Kalitesi)
-└── Siber Guvenlik
-    ├── Tehdit Izleme ve SOC (SIEM, Olay Mudahalesi)
-    └── Guvenlik Denetimi ve Uyum (Pentest, KVKK/GDPR)
-```
-
-**Her dalda ortak payda: PROGRAMLAMA**
+**Sonuc:** Hangi yolu secerseniz secin, programlama bilmeden o meslegi yapamazsiniz. Bu ders, o programlama temelini atar.
 
 ---
 
-## 5. INP104 Ders Haritasi: 10 Haftada Ne Ogreneceksiniz?
+## Bu Derste Ne Ogreneceksiniz? (10 Haftalik Yol Haritasi)
 
-Asagidaki tablo, bu donem boyunca islenecek 10 haftanin kariyer degerini gosterir:
+Bu ders 10 hafta surer. Her hafta bir oncekinin uzerine insa edilir. Atlanamaz, kesilemez. Her hafta sizi gercek dunya becerilerine bir adim daha yaklastirir.
 
-| Hafta | Konu | Bu Beceri Nerede Kullanilir? |
-|-------|------|------------------------------|
-| 1 | Python'a Giris, print(), veri tipleri | Herhangi bir Python kodu yazmanin temeli |
-| 2 | Degiskenler, input(), tip donusumleri | Kullanici verisi isleme, parametre tanimlama |
-| 3 | Kosullu Ifadeler (if/elif/else) | Karar mekanizmalari, is kurallari |
-| 4 | Donguler (while, for) | Veri isleme, otomasyon, tekrarlı gorevler |
-| 5 | Karakter Dizileri | Metin isleme, log analizi, veri temizleme |
-| 6 | Listeler ve Demetler | Veri koleksiyonlari, toplu islemler |
-| 7 | Dosya Islemleri | Konfigurasyon, log, veri dosyalari |
-| 8 | Fonksiyonlar | Moduler kod, tekrar kullanilabilirlik |
-| 9 | Moduller ve OOP | Buyuk projeler, framework kullanimi |
-| 10 | Veritabani (SQLite) | Veri yonetimi, CRUD, backend temelleri |
+### Faz 1: Temeller (Hafta 1-3)
+
+**Hafta 1 - Python'a Giris**
+Ekrana cikti verme, veri tiplerini tanima, ilk Python kodunuzu yazma. Her seyin basladigi yer.
+
+**Hafta 2 - Degiskenler ve Veri Isleme**
+Kullanicidan veri alma, tip donusumleri, metin bicimlendirme. Artik programiniz kullanici ile etkilesime girer.
+
+**Hafta 3 - Kosullu Ifadeler**
+Programiniz karar vermeye baslar: "Eger su kosul saglaniyorsa sunu yap, degilse bunu yap." Tum karar mekanizmalarinin temeli.
 
 ---
 
-## 6. Bu Dersin Olmaz Ise Olmazlari
+### Faz 2: Donguler ve Veri Yapilari (Hafta 4-6)
 
-Bu dersi basariyla tamamlamak icin ogrencinin bilmesi gereken temel gercekler:
+**Hafta 4 - Donguler**
+Tekrarlayan islemleri otomatiklestirme. Bin satir veriyi tek bir dongu ile isleme. **Otomasyonun kalbi burada atmayi baslar.**
 
-1. **Programlama bir SECIM degil, ZORUNLULUKTUR.** 4 kariyer yolunun tamami programlama bilgisi talep eder. "Ben kod yazmayacagim" diye dusunmek, kariyer seceneklerinizi sifirlar.
+**Hafta 5 - Karakter Dizileri**
+Metin verileri uzerinde islem yapma: arama, kesme, birlestirme, donusturme. Log analizi, veri temizleme - hepsi burada baslar.
 
-2. **Bu ders TEMELI atar.** INP104'te ogrenilenler, ileride ogrenilecek ileri konularin (web gelistirme, makine ogrenmesi, veri bilimi, siber guvenlik otomasyonu) on kosullarıdir.
-
-3. **Her hafta bir oncekinin uzerine insa edilir.** Bir haftayi atlamak, sonraki tum haftalari anlamsiz kilar. Hafta 4'teki donguler anlasilmazsa Hafta 7'deki dosya islemleri yapilamaz.
-
-4. **Pratik yapmadan ogrenilmez.** Her haftanin sonundaki gorevleri (`???` yer tutucularini) doldurun. Cevap anahtarina bakmadan once kendiniz deneyin.
-
-5. **Google Colab kullaniliyor.** Bilgisayariniza hicbir sey yuklemeniz gerekmez. Tarayicidan Colab'a girin ve kodlamaya baslayin.
+**Hafta 6 - Listeler ve Demetler**
+Birden fazla veriyi organize etme. Veri koleksiyonlari olusturma ve yonetme. Gercek dunyadaki veri yapilarina ilk adim.
 
 ---
 
-## 7. Akademik Dayanak Ozeti
+### Faz 3: Gercek Dunya Becerileri (Hafta 7-10)
 
-Bu dersin kritik onem argumanlari asagidaki uluslararasi standartlara ve akademik kaynaklara dayanir:
+**Hafta 7 - Dosya Islemleri**
+Dosyadan veri okuma ve dosyaya yazma. Log dosyalari, konfigurasyon dosyalari, veri dosyalari - hepsi bu haftanin konusu.
 
-| Kaynak | Katkisi |
-|--------|---------|
-| WEF Future of Jobs Report 2025 | Analitik dusunme #1 yetkinlik; AI/big data en hizli buyuyen alan |
-| SFIA 9 | Dijital yetkinlik ve kariyer seviye cercevesi |
-| ACM/IEEE-CS/AAAI CS2023 | Bilisim mufredat ve yetkinlik modeli |
-| NIST NICE Framework | Siber guvenlik is gucu yetkinlik yapisi |
-| IDC Turkiye 2025 | 117 Milyar $ pazar, 50.000 AI uzman acigi |
-| Indeed/LinkedIn 2025 | AI ilanlari %9, siber guvenlik %4, bulut (AWS) %14 |
-| CompTIA 2025 | Siber guvenlik istihdami 2034'e kadar %29 buyume |
+**Hafta 8 - Fonksiyonlar**
+Tekrar kullanilabilir kod bloklari olusturma. Artik ayni kodu tekrar tekrar yazmak yerine bir kere yazıp her yerden cagirirsiniz. **Profesyonel kodlamanin baslangici.**
 
-Detayli akademik analiz: `/docs/bilisim_model_academic_research.md`
-Somut ilan verileri: `/docs/active_it_roles_report.md`
+**Hafta 9 - Moduller ve Nesne Tabanli Programlama (OOP)**
+Baskalarinin yazdigi kutuphaneleri kullanma ve kendi siniflarinizi olusturma. Buyuk projelerde calísabilmenin on kosulu.
+
+**Hafta 10 - Veritabani (SQLite)**
+Veri tabani olusturma, veri kaydetme, sorgulama, guncelleme, silme. **Kalici veri yonetiminin temeli.** Tum backend sistemlerinin ortak dili olan SQL ile tanisiniz.
 
 ---
 
-## Dosyalar
+## Donem Sonunda Ne Yapabileceksiniz?
 
-| Dosya | Aciklama |
-|-------|----------|
-| `00-programlama-giris.ipynb` | Haftalik ders notebooku |
+Bu 10 haftayi tamamladiginizda, su programi yazabilir hale geleceksiniz:
 
----
+- Kullanicidan veri alan
+- Bu veriyi kosullara gore isleyen
+- Dosyalarda saklayan
+- Veritabanina kaydeden
+- Tum bunlari fonksiyonlarla moduler sekilde yapan
 
-## Referanslar
-
-- Python Programlama Dili Referans Belgesi (`/docs/yazbel.md`)
-- Bilisimde Somut Meslek ve Ilan Haritasi (`/docs/active_it_roles_report.md`)
-- Bilisim Kariyer Secimi AHP Modeli (`/docs/bilisim_model_academic_research.md`)
+**Bir Python programi.** Bu, bilisim kariyerinizin ilk gercek urunudur.
 
 ---
 
-## Colab Ortami
+## Bu Dersi Ciddiye Alin
 
-Bu ders Google Colab uzerinde calisilmaktadir.
+**1. Programlama secimlik degildir.** 4 kariyer yolunun tamami programlama talep eder. "Ben kod yazmam" demek, kariyerinizi baslamadan bitirmek demektir.
+
+**2. Her hafta bir oncekinin uzerine insa edilir.** Hafta 4'teki donguleri anlamadan Hafta 7'deki dosya islemlerini yapamazsiniz. Tek bir hafta atlamak, geri kalan tum donemi anlamsiz kilar.
+
+**3. Bu ders sadece baslangictir.** Burada ogrenecekleriniz; web gelistirme, makine ogrenmesi, veri bilimi, siber guvenlik otomasyonu gibi ileri konularin **on kosulu**dur.
+
+**4. Pratik yapmazsaniz ogrenmezsiniz.** Her haftanin sonundaki gorevleri mutlaka kendiniz cozun. Cevaplara bakmadan once deneyin.
+
+**5. Bilgisayariniza hicbir sey yuklemeniz gerekmez.** Google Colab uzerinde calisacagiz. Tarayicinizi acin ve kodlamaya baslayin.
 
 ---
 
-> **Bu ders, kariyer yolculugunuzun baslangic noktasidir. Hangi bilisim alanini secerseniz secin, burada ogreneceginiz Python temelleri sizi o kariyere tasiyan koprudur.**
+> **Hangi bilisim kariyerini secerseniz secin, bu ders o kariyerin temel tasidir. Burada atacaginiz adimlar, gelecekteki profesyonel hayatinizin temeli olacaktir.**
